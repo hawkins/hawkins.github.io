@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Josh Hawkins' Blog
+email:       hawkinswritescode@gmail.com
+author:      Josh Hawkins
+description: "Josh Hawkins' blog and home for all things quirky-tech related."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://hawkins.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -37,7 +37,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: 	hawkins
 bitbucket_username:
 stackoverflow_id:
 twitter_username:
@@ -52,18 +52,17 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
+share_facebook: true
+share_twitter: true
 share_googleplus: false
 share_linkedin: false
 share_digg: false
-share_tumblr: false
-share_reddit: false
+share_tumblr: true
+share_reddit: true
 share_stumbleupon: false
-share_hackernews: false
-
+share_hackernews: true
 text:
   pagination:
     newer: 'Newer'
@@ -89,12 +88,12 @@ text:
     email:    'Email Address'
     content:  'What would you like to say?'
     subject:  'New submission!'
-    submit:   'Say Hello'
+    submit:   'Send'
     ajax:
       sending:  'sending..'
       sent:     'Message sent!'
       error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
+  thanks: 'Thanks for contacting me, I will reply as soon as possible!'
   og_locale: 'en_US'
 
 # Build settings

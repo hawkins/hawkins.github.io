@@ -12,7 +12,7 @@ I'll demonstrate how to do make command line apps in Python by writing a quick W
 
 ### Vanilla Python
 
-Vanilla Python, or Python without any major libraries to change the overall structure of the code, can create command line apps fairly easily.
+Vanilla Python is what I'll call Python without any major libraries that would change the overall structure of the code in this scenario. With vanilla Python, we can create command line apps fairly easily.
 
 We'll start with this overall setup:
 
@@ -21,12 +21,13 @@ We'll start with this overall setup:
 import os
 import sys
 
-if __name == "__main__":
+if __name__ == "__main__":
     """Script execution begins here"""
     pass
 {% endhighlight %}
 
 Let's take a look at what we've got here first:
+
 - Line 1 is a "shebang", which instructs the shell on how to execute the script. Since my Python is installed at `/usr/bin/python`, the shell will grab Python to execute this file if I just run `./script.py`. You could similarly run `python script.py`, but we won't worry about this for now.
 - The next few lines are importing modules we'll use to handle the command line. OS allows us to run commands, and SYS allows us to read arguments passed to our program.
 - The Script Execution section is what code will run if the program is run normally. Think of it as our 'main' function.
@@ -207,8 +208,7 @@ import os
 import click
 
 @click.group()
-@click.pass_context
-def cli(ctx):
+def cli():
     """The CLI for PyFi"""
     pass
 

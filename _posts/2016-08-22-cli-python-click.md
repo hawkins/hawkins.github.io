@@ -6,17 +6,17 @@ summary:    Comparing Vanilla Python and Click
 categories: python
 ---
 
-Python has always been easy to make command line applications in. Since most \*nix systems have some version of it installed, it's a good choice for quick CLI apps. 
+Python has always been easy to make command line applications in. Since most \*nix systems have some version of it installed, it's a good choice for quick CLI apps.
 
-Today, I'll demonstrate how to do make command line apps in Python by writing a quick WiFi control program for my Ubuntu 14.04 setup.
+I'll demonstrate how to do make command line apps in Python by writing a quick WiFi control program for my Ubuntu 14.04 setup.
 
 ### Vanilla Python
 
-Vanilla Python, or Python without any major libraries to change the overall structure of the code, can create command line apps fairly easily. 
+Vanilla Python, or Python without any major libraries to change the overall structure of the code, can create command line apps fairly easily.
 
 We'll start with this overall setup:
 
-```Python
+{% highlight python %}
 #!/usr/bin/python
 import os
 import sys
@@ -24,7 +24,7 @@ import sys
 if __name == "__main__":
     """Script execution begins here"""
     pass
-```
+{% endhighlight %}
 
 Let's take a look at what we've got here first:
 - Line 1 is a "shebang", which instructs the shell on how to execute the script. Since my Python is installed at `/usr/bin/python`, the shell will grab Python to execute this file if I just run `./script.py`. You could similarly run `python script.py`, but we won't worry about this for now.
@@ -35,17 +35,17 @@ Next let's look at how we connect to WiFi in the first place.
 
 I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: `nmcli d disconnect iface <INTERFACE>` and `nmcli d wifi connect <SSID> password <PASSWORD> iface <INTERFACE>`. We'll make our python script handle these for us.
 
-```Python
+{% highlight python %}
 def connect(ssid, pw, iface='wlan0'):
 	"""Connect to a given network"""
 	print('Connecting to %s' % ssid)
 	os.system('nmcli d wifi connect "%s" password %s iface %s' % (ssid, pw, iface))
-	
+
 def disconnect(iface):
 	"""Disconnect from a given interface"""
 	print('Disconnecting interface %s' % iface)
 	os.system('nmcli d disconnect iface %s' % iface)
-```
+{% endhighlight %}
 
 Great - now we can call `connect("OurWiFi", "password")` to connect, and `disconnect(interface_name)` to disconnect.
 
@@ -53,7 +53,7 @@ Now how can we make our program listen to insctructions to call these commands? 
 
 Let's mock how we want to interact with this. Since we're using sys to see arguments, we can be simple and behave like `python script.py connect OurWifi OurPassword OurInterface`. Not the most robust design, but we'll go with it.
 
-```Python
+{% highlight python %}
 if __name__ == "__main__":
     """Script execution begins here"""
 
@@ -72,13 +72,13 @@ if __name__ == "__main__":
     # If the command is not recognized, print help
     else:
         print('Invalid command %s' % sys.argv[1])
-```
+{% endhighlight %}
 
 So what's this? We've got our pattern built! All we do here is look at the second argument for our command (`sys.argv[1]`), then decide how to handle that. We've already made our connect and disconnect functions, so that's pretty easy. Let's review the whole code once more
 
 #### Finished Vanilla Python Product
 
-```Python
+{% highlight python %}
 #!/usr/bin/python
 import os
 import sys
@@ -112,11 +112,11 @@ if __name__ == "__main__":
     else:
         print('Invalid command %s' % sys.argv[1])
 
-```
+{% endhighlight %}
 
 Let's check it out in action:
 
-```Shell
+{% highlight shell %}
 $ python script.py connect OurWifi password
 Connecting to OurWifi
 
@@ -125,9 +125,9 @@ Disconnecting interface wlan0
 
 $ python script.py make me a sandwich
 Invalid command make
-```
+{% endhighlight %}
 
-Pretty schwifty! 
+Pretty schwifty!
 
 So we can already see Python is a good fit for CLI. But can we further simplify this? Sure! Let's check out the Python library called "Click".
 
@@ -146,11 +146,11 @@ I'm really not a fan of using `sys.argv`, so let's kick that bucket first. Repla
 
 Now, let's make a new interface and Click group to hold our commands.
 
-```Python
+{% highlight python %}
 @click.group()
 def cli():
     pass
-```
+{% endhighlight %}
 
 This is our Group, which will hold commands.
 
@@ -158,28 +158,28 @@ So how do we make it handle commands? Let's look at this with disconnect first, 
 
 Disconnect has 1 required argument and 0 optional arguments, so its structure in Click looks like this:
 
-```Python
+{% highlight python %}
 @cli.command()         # Add this command to cli group
 @argument('iface')     # Require 1 argument named 'iface'
 def disconnect(iface):
-```
+{% endhighlight %}
 
 Click also provides `click.echo()` as a replacement for console logging, so let's swap that in for `print`. The function otherwise will be unchanged:
 
-```Python
+{% highlight python %}
 @cli.command()         # Add this command to cli group
 @argument('iface')     # Require 1 argument named 'iface'
 def disconnect(iface):
     """Disconnect from a given interface"""
     click.echo('Disconnecting interface %s' % iface)
     os.system('nmcli d disconnect iface %s' % iface)
-```
+{% endhighlight %}
 
-So how about for connect? It has 2 required arguments and 1 optional argument, but how do we make optional arguments with Click? 
+So how about for connect? It has 2 required arguments and 1 optional argument, but how do we make optional arguments with Click?
 
 Turns out, it's as simple as `click.option('--flag', default='value', help='Description')`, so let's add the decorators now:
 
-```Python
+{% highlight python %}
 @cli.command()
 @click.argument('ssid')
 @click.argument('pw')
@@ -188,21 +188,21 @@ def connect(ssid, pw, iface):
     """Connect to a given network"""
     click.echo('Connecting to %s' % ssid)
     os.system('nmcli d wifi connect "%s" password %s iface %s' % (ssid, pw, iface))
-```
+{% endhighlight %}
 
 Now let's tie it all together, by making our script execution block simply call the `cli` function:
 
-```Python
+{% highlight python %}
 if __name__ == "__main__":
     cli()
-```
+{% endhighlight %}
 
 We'll review this now, this time comparing to vanilla.
 
 #### Finished Click Product
 
-```Python
-#!/usr/bin/python 
+{% highlight python %}
+#!/usr/bin/python
 import os
 import click
 
@@ -230,11 +230,11 @@ def disconnect(iface):
 
 if __name__ == "__main__":
     cli()
-```
+{% endhighlight %}
 
 What's interesting to note here, is its actually a hair longer than vanilla. Vanilla came out at 18 lines of code, and Click at 20. The benefit here tho, is that it's much much easier to read and understand, and the bulk of the operation (picking a command) is handled by Click instead, so maintaining this code will be much easier. Additionally, Click gives us a nice help interface:
 
-```Shell
+{% highlight shell %}
 $ click.py
 Usage: clickPyFi.py [OPTIONS] COMMAND [ARGS]...
 
@@ -255,11 +255,10 @@ Usage: clickPyFi.py connect [OPTIONS] SSID PW
 Options:
   --iface TEXT  Network interface to use.
   --help        Show this message and exit.
-```
+{% endhighlight %}
 
 Had we wanted to implement that in Vanilla, our code would have been much longer.
 
 So now you know how to write command line apps in Python, and how to do so easily and quickly with Click. You can check out other similar libraries like Click [here](http://docs.python-guide.org/en/latest/scenarios/cli/), but rest assured I'll compare some of them in this same setting in the future.
 
 Thanks for reading, and be sure to share this post with your friends if you thought it was helpful!
-

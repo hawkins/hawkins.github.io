@@ -50,7 +50,7 @@ def disconnect(iface):
 
 Great - now we can call `connect("OurWiFi", "password")` to connect, and `disconnect(interface_name)` to disconnect.
 
-Now how can we make our program listen to insctructions to call these commands? Let's check that out under the Script Execution portion.
+Now how can we make our program listen to instructions to call these commands? Let's check that out under the Script Execution portion.
 
 Let's mock how we want to interact with this. Since we're using sys to see arguments, we can be simple and behave like `python script.py connect OurWifi OurPassword OurInterface`. Not the most robust design, but we'll go with it.
 
@@ -184,7 +184,7 @@ Turns out, it's as simple as `click.option('--flag', default='value', help='Desc
 @cli.command()
 @click.argument('ssid')
 @click.argument('pw')
-@click.option('--ifage', default='wlan0', help='Network interface to use')
+@click.option('--iface', default='wlan0', help='Network interface to use')
 def connect(ssid, pw, iface):
     """Connect to a given network"""
     click.echo('Connecting to %s' % ssid)
@@ -232,7 +232,7 @@ if __name__ == "__main__":
     cli()
 {% endhighlight %}
 
-What's interesting to note here, is its actually a hair longer than vanilla. Vanilla came out at 18 lines of code, and Click at 20. The benefit here tho, is that it's much much easier to read and understand, and the bulk of the operation (picking a command) is handled by Click instead, so maintaining this code will be much easier. Additionally, Click gives us a nice help interface:
+What's interesting to note here, is it's actually a hair longer than vanilla. Vanilla came out at 18 lines of code, and Click at 20. The benefit here tho, is that it's much much easier to read and understand, and the bulk of the operation (picking a command) is handled by Click instead, so maintaining this code will be much easier. Additionally, Click gives us a nice help interface:
 
 {% highlight shell %}
 $ click.py

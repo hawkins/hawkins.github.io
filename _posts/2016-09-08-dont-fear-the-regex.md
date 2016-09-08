@@ -171,18 +171,19 @@ Plot twist, nothing.
 **Modifiers** modify the rules with which the regular expressions are applied.
 
 Here's a list of the most common modifiers (from [Regex101.com](https://regex101.com/)):
+
 |Modifier |Nickname|Description |
-|:-:|:- |:- |
-| g| global| All matches (don't return on first match)
-| m| multi-line| Causes ^ and $ to match the begin/end of each line (not only begin/end of string)
-| i| insensitive| Case insensitive match (ignores case of [a-zA-Z])
-| x| extended| Spaces and text after a # in the pattern are ignored
-| X| extra| A \ followed by a letter with no special meaning is faulted
-| s| single line| Dot matches newline characters
-| u| unicode| Pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters
-| U| ungreedy| The match becomes lazy by default. Now a `?` following a quantifier makes it greedy
-| A| anchored| Pattern is forced to ^
-| J| duplicate|allow duplicate subpattern names
+|:-:|:--|:--|
+| g| global| All matches (don't return on first match)|
+| m| multi-line| Causes ^ and $ to match the begin/end of each line (not only begin/end of string)|
+| i| insensitive| Case insensitive match (ignores case of [a-zA-Z])|
+| x| extended| Spaces and text after a # in the pattern are ignored|
+| X| extra| A \ followed by a letter with no special meaning is faulted|
+| s| single line| Dot matches newline characters|
+| u| unicode| Pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters|
+| U| ungreedy| The match becomes lazy by default. Now a `?` following a quantifier makes it greedy|
+| A| anchored| Pattern is forced to ^|
+| J| duplicate|allow duplicate subpattern names|
 
 
 For instance, until now, all of our examples have been *case-sensitive*. That means, capitalizing or lower-casing any one character would make that string no longer match the pattern. We can make our patterns *case-**insensitive*** with the `i` modifier.

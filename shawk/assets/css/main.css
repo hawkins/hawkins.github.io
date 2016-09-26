@@ -4156,3 +4156,15 @@
 		}
 
 	}
+
+#header img {
+	width: 512px;
+	height: 512px;
+}
+
+@media screen and (max-width: 980px) {
+	#header img {
+		width: 256px;
+		height: 256px;
+	}
+}

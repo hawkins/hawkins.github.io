@@ -4,12 +4,23 @@ layout: default
 {% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
+
+    <div class="welcome">
+        <h2>Welcome</h2>
+        <p>
+            Thanks for stopping by - don't forget to <a href="/contact/">say hello</a> before you go!
+        </p>
+        <p>
+            While you're here, feel free to check out the blog posts below to see what I'm up to lately. Or if you're interested to see some of my projects, you can check out <a href="/projects/">projects showcase</a> page.
+        </p>
+    </div>
+
   {% if posts_count > 0 %}
     <div class="posts">
       {% for post in paginator.posts %}
         <div class="post py3">
           <p class="post-meta">{{ post.date | date: site.date_format }}</p>
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h1 class="post-title">{{ post.title }}</h1></a>
           <p class="post-summary">
             {% if post.summary %}
               {{ post.summary }}

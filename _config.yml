@@ -4,7 +4,7 @@ email:       hawkinswritescode@gmail.com
 author:      Josh Hawkins
 description: "Josh Hawkins' blog and home for all things quirky tech-related."
 baseurl:     ""
-url:         "http://hawkins.github.io"
+url:         "/"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -20,11 +20,11 @@ bing_verification:
 animated:             false
 show_related_posts:   false
 show_post_footers:    false
-show_social_icons:    false
+show_social_icons:    true
 ajaxify_contact_form: false
-enable_mathjax: false
-extended_fonts: false
-enable_anchorjs: false
+enable_mathjax:       false
+extended_fonts:       false
+enable_anchorjs:      false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
@@ -37,14 +37,14 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: 	hawkins
+github_username: hawkins
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
+twitter_username: itwasyellow
 skype_username:
 steam_nickname:
 google_plus_id:
-linkedin_username:
+linkedin_username: hawkinsjosh
 angellist_username:
 medium_id:
 bitcoin_url:

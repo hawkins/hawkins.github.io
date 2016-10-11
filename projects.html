@@ -11,41 +11,16 @@ tags: projects
         I spend a large portion of my free time learning new technologies for software engineering. Occasionally, this leads to a complete product or application I push out to the public. You can check out some of my more notable ones here.
     </p>
 
-    <hr/>
-    <section class="showcase">
-        <h2><a href="/shawk/" target="_blank" class="nodec">Shawk</a></h2>
-        <p>
-            A Python library to send and receive SMS for free by using Gmail, SMTP and IMAP gateways, with pip support and complete documentation.
-        </p>
-        <p>
-            I needed a simple way to text my Raspberry Pi for a number of scripts and other projects.
-            I had looked at other solutions like Twilio, but wanted a simpler and free method with intelligent responses based on regular expressions.
-            Enter: Shawk!
-        </p>
-        <p class="quote">
-            Writing Shawk taught me about creating more Pythonic code and objects. Additionally, this project taught me a great deal about how E-Mail is defined and operates.
-        </p>
-        <h3 class="center"><a href="/shawk/" target="_blank">View Shawk's Showcase</a></h3>
-    </section>
+    <div class="projects">
+        {% for project in site.projects %}
+            <hr/>
+            <section class="showcase">
+                <h2><a href="{{ project.link }}" target="_blank" class="nodec">{{ project.title }}</a></h2>
 
-    <hr/>
-    <section class="showcase">
-        <h2><a href="http://hawkins.github.io/start-page/" target="_blank" class="nodec">Simple Start Page</a></h2>
-        <p>
-            A very basic Google Chrome extension to replace the New Tab Page with a Google Calendar view and provide customizable bookmarks with a custom interface.
-        </p>
-        <p>
-            I wanted a more useful New Tab page in Chrome to help me keep track of my class and interview schedule, as well as provide a useful search bar and categorized bookmark collection.
-            Simple Start Page was the answer, and <a href="https://chrome.google.com/webstore/detail/simple-start-page/penpdmhpelafnfaeidigoapommfeoeai" target="_blank">a number of users agree</a>!
-        </p>
-        <p class="quote">
-            Working at Textron Systems was my first exposure to web development.
-            There I learned basic JavaScript and JQuery development, and had an itch to learn more about web dev.
-            <br/>
-            Simple Start Page was my first foray into the great world of web dev, and I used it to learn and practice concepts to help my work at Textron.
-            <br/>
-            Writing it also taught me a good deal about distribution and scalable design through a number of rookie mistakes.
-        </p>
-        <h3 class="center"><a href="http://hawkins.github.io/start-page/" target="_blank">View Simple Start Page's Showcase</a></h3>
-    </section>
+                {{ project.content }}
+
+                <h3 class="center"><a href="{{ project.link }}" target="_blank">View {{ project.title }}'s Showcase</a></h3>
+            </section>
+        {% endfor %}
+    </div>
 </div>

@@ -96,6 +96,10 @@ text:
   thanks: 'Thanks for contacting me, I will reply as soon as possible!'
   og_locale: 'en_US'
 
+# Custom collections
+collections:
+  - projects
+
 # Build settings
 markdown:     kramdown
 redcarpet:

@@ -4,7 +4,7 @@ email:       hawkinswritescode@gmail.com
 author:      Josh Hawkins
 description: "Josh Hawkins' blog and home for all things quirky tech-related."
 baseurl:     ""
-url:         "/"
+url:         "http://hawkins.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services

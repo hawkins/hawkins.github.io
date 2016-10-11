@@ -12,10 +12,14 @@
 p.quote:before {
     color: #ccc;
     content: open-quote;
+    vertical-align: -0.3em;
     font-size: 4em;
     line-height: 0.1em;
     margin-right: 0.25em;
-    vertical-align: -0.3em;
+}
+p.quote:after {
+    content: close-quote;
+    color: rgba(0, 0, 0, 0);
 }
 p.quote {
     background: rgba(51, 51, 51, 0.1);
@@ -25,6 +29,11 @@ p.quote {
 
     & a {
         text-shadow: none;
+    }
+    & br {
+        display: block;
+        margin-top: 0.5em;
+        content: " ";
     }
 }
 

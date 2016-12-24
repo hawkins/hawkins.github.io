@@ -2,7 +2,7 @@
 title:       Hawkins Writes Code
 email:       hawkinswritescode@gmail.com
 author:      Josh Hawkins
-description: "Josh Hawkins' blog and home for all things quirky tech-related."
+description: "Josh Hawkins' tech blog and home for all things software, web, and otherwise."
 baseurl:     ""
 url:         "http://hawkins.github.io"
 date_format: "%b %-d, %Y"

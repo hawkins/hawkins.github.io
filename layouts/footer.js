@@ -7,5 +7,10 @@ export default () => (
     <span> or </span>
     <a href="https://twitter.com/hawkinjs">Twitter</a>
     <span>!</span>
+    <style jsx>{`
+      div.footer {
+        border-top: 1px solid black;
+      }
+    `}</style>
   </div>
 )

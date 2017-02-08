@@ -1,10 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import posts from '../posts/index'
-import Index from '../layouts/index'
+import Page from '../layouts/page'
 
 export default () => (
-  <Index title="Hawkins Writes Code">
+  <Page title="Hawkins Writes Code">
+    <div className="welcome">
+      <h2>Welcome!</h2>
+      <p>
+        Thanks for stopping by - feel free to check out the blog posts below to see what I'm up to lately. Or if you're interested to see some of my projects, you can check out <Link href="/projects">projects showcase</Link> page.
+      </p>
+    </div>
     { posts.length > 0 ?
       <div className="posts">
         { posts.map(post => (
@@ -24,5 +30,5 @@ export default () => (
     :
       null
     }
-  </Index>
+  </Page>
 )

@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
-import Header from './header'
-import Footer from './footer'
+import Page from './page'
 
 export default class Post extends Component {
   render() {
     return (
-      <div>
-        <Head>
-          <title>{ this.props.title }</title>
-        </Head>
-        <Header />
+      <Page title={this.props.title}>
         { this.props.children }
-        <Footer />
-      </div>
+        {/* TODO: Social media buttons */}
+      </Page>
     )
   }
 }

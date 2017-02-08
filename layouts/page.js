@@ -7,21 +7,20 @@ import Footer from './footer'
 export default class Index extends Component {
   render() {
     return (
-      <div>
+      <div className="page">
         <Head>
           <title>{ this.props.title }</title>
         </Head>
         <Header />
 
-        <div className="welcome">
-          <h2>Welcome!</h2>
-          <p>
-            Thanks for stopping by - feel free to check out the blog posts below to see what I'm up to lately. Or if you're interested to see some of my projects, you can check out <Link href="/projects">projects showcase</Link> page.
-          </p>
-        </div>
-
         { this.props.children }
         <Footer />
+        <style jsx>{`
+        div.page {
+          margin: auto;
+          max-width: 60%;
+        }
+        `}</style>
       </div>
     )
   }

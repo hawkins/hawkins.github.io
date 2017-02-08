@@ -16,7 +16,7 @@
   "author": "Josh Hawkins",
   "license": "MIT",
   "dependencies": {
-    "next": "^1.2.3",
+    "next": "^2.0.0-beta.24",
     "react-markdown": "^2.4.4"
   }
 }

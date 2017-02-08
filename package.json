@@ -1,0 +1,22 @@
+{
+  "name": "hawkins-writes-code",
+  "version": "2.0.0",
+  "description": "Josh Hawkins's Personal/Tech Blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/hawkins/hawkins.github.io"
+  },
+  "author": "Josh Hawkins",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^1.2.3",
+    "react-markdown": "^2.4.4"
+  }
+}

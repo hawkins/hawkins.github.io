@@ -1,5 +1,11 @@
 export default [
   {
+    file: "python-string-formatting",
+    date: "2016/10/22",
+    title: "Benchmarking String Formatting in Python",
+    summary: "Performance and Syntax - Or Why I'm Excited for Python 3.6"
+  },
+  {
     date: "2016/10/11",
     file: "groupme-at-all",
     title: "Using Hubot to Mention Everyone in GroupMe",

@@ -287,18 +287,129 @@ print(who)                                 # "Eli"
       Here's a list of the most common modifiers (from <a href="https://regex101.com/">Regex101.com</a>):
     </p>
 
-    |Modifier |Nickname|Description |
-    |:-:|:--|:--|
-    | g| global| All matches (don't return on first match)|
-    | m| multi-line| Causes ^ and $ to match the begin/end of each line (not only begin/end of string)|
-    | i| insensitive| Case insensitive match (ignores case of [a-zA-Z])|
-    | x| extended| Spaces and text after a # in the pattern are ignored|
-    | X| extra| A \ followed by a letter with no special meaning is faulted|
-    | s| single line| Dot matches newline characters|
-    | u| unicode| Pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters|
-    | U| ungreedy| The match becomes lazy by default. Now a `?` following a quantifier makes it greedy|
-    | A| anchored| Pattern is forced to ^|
-    | J| duplicate|allow duplicate subpattern names|
+    <table>
+      <tr>
+        <th>
+          Modifier
+        </th>
+        <th>
+          Nickname
+        </th>
+        <th>
+          Description
+        </th>
+      </tr>
+      <tr>
+        <td>
+          g
+        </td>
+        <td>
+          global
+        </td>
+        <td>
+          All matches (don't return on first match)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          m
+        </td>
+        <td>
+          multi-line
+        </td>
+        <td>
+          Causes ^ and $ to match the begin/end of each line (not only begin/end of string)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          i
+        </td>
+        <td>
+          insensitive
+        </td>
+        <td>
+          Case insensitive match (ignores case of [a-zA-Z])
+        </td>
+      </tr>
+      <tr>
+        <td>
+          x
+        </td>
+        <td>
+          extended
+        </td>
+        <td>
+          Spaces and text after a # in the pattern are ignored
+        </td>
+      </tr>
+      <tr>
+        <td>
+          X
+        </td>
+        <td>
+          extra
+        </td>
+        <td>
+          A \ followed by a letter with no special meaning is faulted
+        </td>
+      </tr>
+      <tr>
+        <td>
+          s
+        </td>
+        <td>
+          single-line
+        </td>
+        <td>
+          Dot matches newline characters
+        </td>
+      </tr>
+      <tr>
+        <td>
+          u
+        </td>
+        <td>
+          unicode
+        </td>
+        <td>
+          Pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters
+        </td>
+      </tr>
+      <tr>
+        <td>
+          U
+        </td>
+        <td>
+          ungreedy
+        </td>
+        <td>
+          The match becomes lazy by default. Now a `?` following a quantifier makes it greedy
+        </td>
+      </tr>
+      <tr>
+        <td>
+          A
+        </td>
+        <td>
+          anchored
+        </td>
+        <td>
+          Pattern is forced to ^
+        </td>
+      </tr>
+      <tr>
+        <td>
+          J
+        </td>
+        <td>
+          duplicate
+        </td>
+        <td>
+          allow duplicate subpattern names
+        </td>
+      </tr>
+    </table>
 
     <p>
       For instance, until now, all of our examples have been <i>case-sensitive</i>. That means, capitalizing or lower-casing any one character would make that string no longer match the pattern. We can make our patterns <i>case-<b>insensitive</b></i> with the <code>`i`</code> modifier.

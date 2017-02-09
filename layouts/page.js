@@ -37,15 +37,7 @@ export default class Page extends Component {
           a:hover {
             text-decoration: underline;
           }
-          `}</style>
-          <title>{ this.props.title }</title>
-        </Head>
-        <Header />
-
-        <div className="content">
-          { this.props.children }
-        </div>
-        <style global>{`
+          h1, h2, h3, h4, h5, h6 { font-weight: bold; }
           .content {
             padding-top: 20px;
             padding-bottom: 20px;
@@ -55,7 +47,14 @@ export default class Page extends Component {
           .content {
             background-color: #ecf0f1;
           }
-        `}</style>
+          `}</style>
+          <title>{ this.props.title }</title>
+        </Head>
+        <Header />
+
+        <div className="content">
+          { this.props.children }
+        </div>
 
         <Footer />
       </div>

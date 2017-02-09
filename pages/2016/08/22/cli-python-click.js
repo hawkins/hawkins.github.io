@@ -40,14 +40,14 @@ if __name__ == "__main__":
     </p>
 
     <ul>
-      <li>Line 1 is a "shebang", which instructs the shell on how to execute the script. Since my Python is installed at <code>/usr/bin/python</code>, the shell will grab Python to execute this file if I just run <code>./script.py</code>. You could similarly run <code>python script.py</code>, but we won't worry about this for now.</li>
+      <li>Line 1 is a "shebang", which instructs the shell on how to execute the script. Since my Python is installed at <code>`/usr/bin/python`</code>, the shell will grab Python to execute this file if I just run <code>`./script.py`</code>. You could similarly run <code>`python script.py`</code>, but we won't worry about this for now.</li>
       <li>The next few lines are importing modules we'll use to handle the command line. OS allows us to run commands, and SYS allows us to read arguments passed to our program.</li>
       <li>The Script Execution section is what code will run if the program is run normally. Think of it as our 'main' function.</li>
     </ul>
 
     Next let's look at how we connect to WiFi in the first place.
 
-    I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: <code>nmcli d disconnect iface [INTERFACE] </code> and <code>nmcli d wifi connect [SSID] password [PASSWORD] iface [INTERFACE] </code>. We'll make our python script handle these for us.
+    I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: <code>`nmcli d disconnect iface [INTERFACE] `</code> and <code>`nmcli d wifi connect [SSID] password [PASSWORD] iface [INTERFACE] `</code>. We'll make our python script handle these for us.
 
     <Highlight className="python">
 {`def connect(ssid, pw, iface='wlan0'):
@@ -63,7 +63,7 @@ def disconnect(iface):
     </Highlight>
 
     <p>
-      Great - now we can call <code>connect("OurWiFi", "password")</code> to connect, and <code>disconnect(interface_name)</code> to disconnect.
+      Great - now we can call <code>`connect("OurWiFi", "password")`</code> to connect, and <code>`disconnect(interface_name)`</code> to disconnect.
     </p>
 
     <p>
@@ -71,7 +71,7 @@ def disconnect(iface):
     </p>
 
     <p>
-      Let's mock how we want to interact with this. Since we're using sys to see arguments, we can be simple and behave like <code>python script.py connect OurWifi OurPassword OurInterface</code>. Not the most robust design, but we'll go with it.
+      Let's mock how we want to interact with this. Since we're using sys to see arguments, we can be simple and behave like <code>`python script.py connect OurWifi OurPassword OurInterface`</code>. Not the most robust design, but we'll go with it.
     </p>
 
     <Highlight className="python">
@@ -97,7 +97,7 @@ def disconnect(iface):
     </Highlight>
 
     <p>
-      So what's this? We've got our pattern built! All we do here is look at the second argument for our command (<code>sys.argv[1]</code>), then decide how to handle that. We've already made our connect and disconnect functions, so that's pretty easy. Let's review the whole code once more:
+      So what's this? We've got our pattern built! All we do here is look at the second argument for our command (<code>`sys.argv[1]`</code>), then decide how to handle that. We've already made our connect and disconnect functions, so that's pretty easy. Let's review the whole code once more:
     </p>
 
     <h4>Finished Vanilla Python Product</h4>
@@ -166,7 +166,7 @@ Invalid command make
     <h3>Click</h3>
 
     <p>
-      Click, the Command Line Interface Creation Kit, is a library we can use to greatly simplify the code by using decorators to alter and arrange functions. You can check it out on the web <a href="http://click.pocoo.org/5/">here</a>, but for now let's get started by running <code>pip install click</code> from the command line.
+      Click, the Command Line Interface Creation Kit, is a library we can use to greatly simplify the code by using decorators to alter and arrange functions. You can check it out on the web <a href="http://click.pocoo.org/5/">here</a>, but for now let's get started by running <code>`pip install click`</code> from the command line.
     </p>
 
     <p>
@@ -189,7 +189,7 @@ Invalid command make
     </ul>
 
     <p>
-      I'm really not a fan of using <code>sys.argv</code>, so let's kick that bucket first. Replace <code>import sys</code> with <code>import click</code>. This is great, too, because Click will handle arguments from command line and pass them appropriately as function arguments!
+      I'm really not a fan of using <code>`sys.argv`</code>, so let's kick that bucket first. Replace <code>`import sys`</code> with <code>`import click`</code>. This is great, too, because Click will handle arguments from command line and pass them appropriately as function arguments!
     </p>
 
     <p>
@@ -224,7 +224,7 @@ def disconnect(iface):
     </Highlight>
 
     <p>
-      Click also provides <code>click.echo()</code> as a replacement for console logging, so let's swap that in for <code>print</code>. The function otherwise will be unchanged:
+      Click also provides <code>`click.echo()`</code> as a replacement for console logging, so let's swap that in for <code>`print`</code>. The function otherwise will be unchanged:
     </p>
 
     <Highlight className="python">
@@ -242,7 +242,7 @@ def disconnect(iface):
     </p>
 
     <p>
-      Turns out, it's as simple as \`click.option('--flag', default='value', help='Description')\`, so let's add the decorators now:
+      Turns out, it's as simple as <code>`click.option('--flag', default='value', help='Description')`</code>, so let's add the decorators now:
     </p>
 
     <Highlight className="python">
@@ -258,7 +258,7 @@ def connect(ssid, pw, iface):
     </Highlight>
 
     <p>
-      Now let's tie it all together, by making our script execution block simply call the \`cli\` function:
+      Now let's tie it all together, by making our script execution block simply call the <code>`cli`</code> function:
     </p>
 
     <Highlight className="python">

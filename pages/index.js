@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import posts from '../posts/index'
+import posts from '../posts'
 import Page from '../layouts/page'
 
 export default () => (
@@ -15,15 +15,27 @@ export default () => (
       <div className="posts">
         { posts.map(post => (
           <div className="post py3" key={post.title}>
-            <Link href={`${post.date}/${post.file}`} className="post-link">
-              <h1 className="post-title">
-                { post.title }
-              </h1>
+            <Link href={`${post.date}/${post.file}`}>
+              <h1 className="post-title"> { post.title } </h1>
             </Link>
-            <p className="post-meta">{ post.date }</p>
-            <p className="post-summary">
-              { post.summary }
+            <p>
+              <i> { post.date } </i>
+              {` -- `}
+              <i> { post.summary } </i>
             </p>
+            <style jsx>{`
+              h1 {
+                margin-bottom: 0;
+              }
+              h1:hover {
+                color: #ff0080;
+                text-decoration: underline;
+              }
+              p {
+                margin-top: 0.5em;
+                padding-bottom: 20px;
+              }
+            `}</style>
           </div>
         ))}
       </div>

@@ -6,7 +6,7 @@ export default class Post extends Component {
     return (
       <Page title={this.props.title}>
         { this.props.children }
-        <style global>{`
+        <style>{`
           /*
 
           Atom One Dark by Daniel Gamage

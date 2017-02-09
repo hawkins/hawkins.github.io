@@ -60,7 +60,7 @@ def disconnect(iface):
     """Disconnect from a given interface"""
     print('Disconnecting interface %s' % iface)
     os.system('nmcli d disconnect iface %s' % iface)
-    \`\`\``} />
+\`\`\``} />
 
     <p>
       Great - now we can call <code>connect("OurWiFi", "password")</code> to connect, and <code>disconnect(interface_name)</code> to disconnect.
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     # If the command is not recognized, print help
     else:
         print('Invalid command %s' % sys.argv[1])
-    \`\`\``} />
+\`\`\``} />
 
     <p>
       So what's this? We've got our pattern built! All we do here is look at the second argument for our command (<code>sys.argv[1]</code>), then decide how to handle that. We've already made our connect and disconnect functions, so that's pretty easy. Let's review the whole code once more:
@@ -215,7 +215,8 @@ def cli():
     <ReactMarkdown source={`\`\`\`Python
 @cli.command()         # Add this command to cli group
 @argument('iface')     # Require 1 argument named 'iface'
-# def disconnect(iface): ...
+def disconnect(iface):
+    # ...
 \`\`\``} />
 
     <p>
@@ -320,7 +321,7 @@ Connect to a given network
 Options:
 --iface TEXT  Network interface to use.
 --help        Show this message and exit.
-    \`\`\``} />
+\`\`\``} />
 
     <p>
       Had we wanted to implement that in Vanilla, our code would have been much longer.

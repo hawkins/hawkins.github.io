@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     Next let's look at how we connect to WiFi in the first place.
 
-    I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: <code>`nmcli d disconnect iface [INTERFACE] `</code> and <code>`nmcli d wifi connect [SSID] password [PASSWORD] iface [INTERFACE] `</code>. We'll make our python script handle these for us.
+    I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: <code>`nmcli d disconnect iface [INTERFACE]`</code> and <code>`nmcli d wifi connect [SSID] password [PASSWORD] iface [INTERFACE]`</code>. We'll make our python script handle these for us.
 
     <Highlight className="python">
 {`def connect(ssid, pw, iface='wlan0'):

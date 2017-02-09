@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
+import Highlight from 'react-highlight'
 import Post from '../../../../layouts/post'
 
 export default () => (
@@ -25,16 +25,15 @@ export default () => (
       We'll start with this overall setup:
     </p>
 
-    <ReactMarkdown source={
-`\`\`\`Python
-#!/usr/bin/python
+    <Highlight className="python">
+{`#!/usr/bin/python
 import os
 import sys
 
 if __name__ == "__main__":
     """Script execution begins here"""
-    pass
-\`\`\``} />
+    pass`}
+    </Highlight>
 
     <p>
       Let's take a look at what we've got here first:
@@ -50,8 +49,8 @@ if __name__ == "__main__":
 
     I use nmcli to handle this on Ubuntu 14.04, whose commands look like this: <code>nmcli d disconnect iface [INTERFACE] </code> and <code>nmcli d wifi connect [SSID] password [PASSWORD] iface [INTERFACE] </code>. We'll make our python script handle these for us.
 
-    <ReactMarkdown source={`\`\`\`Python
-def connect(ssid, pw, iface='wlan0'):
+    <Highlight className="python">
+{`def connect(ssid, pw, iface='wlan0'):
     """Connect to a given network"""
     print('Connecting to %s' % ssid)
     os.system('nmcli d wifi connect "%s" password %s iface %s' % (ssid, pw, iface))
@@ -60,7 +59,8 @@ def disconnect(iface):
     """Disconnect from a given interface"""
     print('Disconnecting interface %s' % iface)
     os.system('nmcli d disconnect iface %s' % iface)
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Great - now we can call <code>connect("OurWiFi", "password")</code> to connect, and <code>disconnect(interface_name)</code> to disconnect.
@@ -74,8 +74,8 @@ def disconnect(iface):
       Let's mock how we want to interact with this. Since we're using sys to see arguments, we can be simple and behave like <code>python script.py connect OurWifi OurPassword OurInterface</code>. Not the most robust design, but we'll go with it.
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-if __name__ == "__main__":
+    <Highlight className="python">
+{`if __name__ == "__main__":
     """Script execution begins here"""
 
     # If we want to connect
@@ -93,7 +93,8 @@ if __name__ == "__main__":
     # If the command is not recognized, print help
     else:
         print('Invalid command %s' % sys.argv[1])
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       So what's this? We've got our pattern built! All we do here is look at the second argument for our command (<code>sys.argv[1]</code>), then decide how to handle that. We've already made our connect and disconnect functions, so that's pretty easy. Let's review the whole code once more:
@@ -101,9 +102,8 @@ if __name__ == "__main__":
 
     <h4>Finished Vanilla Python Product</h4>
 
-    <ReactMarkdown source={`
-\`\`\`Python
-#!/usr/bin/python
+    <Highlight className="python">
+{`#!/usr/bin/python
 import os
 import sys
 
@@ -135,14 +135,15 @@ if __name__ == "__main__":
     # If the command is not recognized, print help
     else:
         print('Invalid command %s' % sys.argv[1])
-
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Let's check it out in action:
     </p>
 
-    <ReactMarkdown source={`\`\`\`shell
+    <Highlight className="shell">
+{`
 $ python script.py connect OurWifi password
 Connecting to OurWifi
 
@@ -151,7 +152,8 @@ Disconnecting interface wlan0
 
 $ python script.py make me a sandwich
 Invalid command make
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Pretty schwifty!
@@ -194,11 +196,12 @@ Invalid command make
       Now, let's make a new interface and Click group to hold our commands.
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-@click.group()
+    <Highlight className="python">
+{`@click.group()
 def cli():
     pass
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       This is our Group, which will hold commands.
@@ -212,25 +215,27 @@ def cli():
       Disconnect has 1 required argument and 0 optional arguments, so its structure in Click looks like this:
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-@cli.command()         # Add this command to cli group
+    <Highlight className="python">
+{`@cli.command()         # Add this command to cli group
 @argument('iface')     # Require 1 argument named 'iface'
 def disconnect(iface):
     # ...
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Click also provides <code>click.echo()</code> as a replacement for console logging, so let's swap that in for <code>print</code>. The function otherwise will be unchanged:
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-@cli.command()         # Add this command to cli group
+    <Highlight className="python">
+{`@cli.command()         # Add this command to cli group
 @argument('iface')     # Require 1 argument named 'iface'
 def disconnect(iface):
     """Disconnect from a given interface"""
     click.echo('Disconnecting interface %s' % iface)
     os.system('nmcli d disconnect iface %s' % iface)
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       So how about for connect? It has 2 required arguments and 1 optional argument, but how do we make optional arguments with Click?
@@ -240,8 +245,8 @@ def disconnect(iface):
       Turns out, it's as simple as \`click.option('--flag', default='value', help='Description')\`, so let's add the decorators now:
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-@cli.command()
+    <Highlight className="python">
+{`@cli.command()
 @click.argument('ssid')
 @click.argument('pw')
 @click.option('--iface', default='wlan0', help='Network interface to use')
@@ -249,16 +254,18 @@ def connect(ssid, pw, iface):
     """Connect to a given network"""
     click.echo('Connecting to %s' % ssid)
     os.system('nmcli d wifi connect "%s" password %s iface %s' % (ssid, pw, iface))
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Now let's tie it all together, by making our script execution block simply call the \`cli\` function:
     </p>
 
-    <ReactMarkdown source={`\`\`\`Python
-if __name__ == "__main__":
+    <Highlight className="python">
+{`if __name__ == "__main__":
     cli()
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       We'll review this now, this time comparing to vanilla.
@@ -266,8 +273,8 @@ if __name__ == "__main__":
 
     <h4>Finished Click Product</h4>
 
-    <ReactMarkdown source={`\`\`\`Python
-#!/usr/bin/python
+    <Highlight className="python">
+{`#!/usr/bin/python
 import os
 import click
 
@@ -294,15 +301,15 @@ def disconnect(iface):
 
 if __name__ == "__main__":
     cli()
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       What's interesting to note here, is it's actually a hair longer than vanilla. Vanilla came out at 18 lines of code, and Click at 20. The benefit here tho, is that it's much much easier to read and understand, and the bulk of the operation (picking a command) is handled by Click instead, so maintaining this code will be much easier. Additionally, Click gives us a nice help interface:
     </p>
 
-    <ReactMarkdown source={`\`\`\`sh
-$ click.py
-Usage: clickPyFi.py [OPTIONS] COMMAND [ARGS]...
+    <Highlight className="shell">
+{`Usage: clickPyFi.py [OPTIONS] COMMAND [ARGS]...
 
 The CLI for PyFi
 
@@ -321,7 +328,8 @@ Connect to a given network
 Options:
 --iface TEXT  Network interface to use.
 --help        Show this message and exit.
-\`\`\``} />
+`}
+    </Highlight>
 
     <p>
       Had we wanted to implement that in Vanilla, our code would have been much longer.
@@ -334,8 +342,5 @@ Options:
     <p>
       Thanks for reading, and be sure to share this post with your friends if you thought it was helpful!
     </p>
-
-
-
   </Post>
 )

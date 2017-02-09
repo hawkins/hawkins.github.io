@@ -17,16 +17,18 @@ export default class Page extends Component {
             height: 100%;
             background-color: black;
           }
+          pre {
+            margin: 10px;
+            border: 1px solid #ff0080;
+            overflow-x: auto;
+          }
           * {
             font-weight: 300;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
           }
-          pre {
-            margin: 10px;
-            padding: 10px;
-            font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-            border: 1px solid #ff0080;
-            overflow-x: auto;
+          pre *,
+          code {
+            font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
           }
           a {
             color: #ff0080;
@@ -50,8 +52,7 @@ export default class Page extends Component {
             padding-left: 20%;
             padding-right: 20%;
           }
-          .content,
-          .content * {
+          .content {
             background-color: #ecf0f1;
           }
         `}</style>

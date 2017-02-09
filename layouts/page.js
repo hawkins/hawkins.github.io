@@ -9,6 +9,7 @@ export default class Page extends Component {
     return (
       <div className="page">
         <Head>
+          <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
           <style>{`
           html,
           body {

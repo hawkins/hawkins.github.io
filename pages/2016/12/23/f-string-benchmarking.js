@@ -112,7 +112,7 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
       </tr>
       <tr>
         <td>
-          %
+          <code>`%`</code>
         </td>
         <td>
           0.358393278391
@@ -171,7 +171,9 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     <blockquote>
       <i>Please refer to older blog post if you'd like to compare result between releases. Here is a quick summary:</i>
 
-      Previously, % was the fastest option by far. <code>`str.format()`</code> was roughly 2.5 times slower than %. And <code>`str.Template()`</code> was vastly slower than either, at roughly 16 times slower than %.
+      <br/>
+
+      Previously, <code>`%`</code> was the fastest option by far. <code>`str.format()`</code> was roughly 2.5 times slower than <code>`%`</code>. And <code>`str.Template()`</code> was vastly slower than either, at roughly 16 times slower than <code>`%`</code>.
     </blockquote>
 
 
@@ -184,11 +186,11 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     </p>
 
     <p>
-      F-strings were roughly 1.3 times faster than % at best. F-strings are both more powerful than % and faster? Wow!
+      F-strings were roughly 1.3 times faster than <code>`%`</code> at best. F-strings are both more powerful than <code>`%`</code> and faster? Wow!
     </p>
 
     <p>
-      % was already wildly faster than the others, clocking in at roughly 3 times faster than `str.format()` and 12 times faster than `string.Template()`.
+      <code>`%`</code> was already wildly faster than the others, clocking in at roughly 3 times faster than `str.format()` and 12 times faster than `string.Template()`.
       This made f-strings roughly 3.8 times faster than `str.format()` and roughly 15.7 times faster than `str.Template()`!
     </p>
 

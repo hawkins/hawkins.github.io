@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import posts from '../posts'
+import posts from '../data/posts'
 import Page from '../layouts/page'
 
 export default () => (

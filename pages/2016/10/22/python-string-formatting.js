@@ -70,14 +70,14 @@ export default () => (
     </p>
 
 
-    <h3>%-formatting</h3>
+    <h3><code>`%`</code>-formatting</h3>
 
     <p>
       <a href="https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting">View the docs</a>
     </p>
 
     <p>
-      Python has what the gurus on stack overflow call "old-style string formatting" with the <b>%</b> operator. Its syntax goes a bit like this:
+      Python has what the gurus on stack overflow call "old-style string formatting" with the <code>`%`</code> operator. Its syntax goes a bit like this:
     </p>
 
     <Highlight className="python">
@@ -153,7 +153,7 @@ TypeError: not all arguments converted during string formatting`}
     </Highlight>
 
     <p>
-      So <code>`str.format()`</code> is more powerful than the % operator, but it is significantly more cumbersome to use. This leaves one last option for string formatting prior to Python 3.6:
+      So <code>`str.format()`</code> is more powerful than the <code>`%`</code> operator, but it is significantly more cumbersome to use. This leaves one last option for string formatting prior to Python 3.6:
     </p>
 
     <h3>str.Template</h3>
@@ -248,7 +248,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
       </tr>
       <tr>
         <td>
-          %
+          <code>`%`</code>
         </td>
         <td>
           0.255867058399
@@ -291,7 +291,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     </table>
 
     <p>
-      As you can see, % was the fastest option by far. <code>`str.format()`</code> was roughly 2.5 times slower than %. And <code>`str.Template()`</code> was vastly slower than either, at roughly 16 times slower than %.
+      As you can see, <code>`%`</code> was the fastest option by far. <code>`str.format()`</code> was roughly 2.5 times slower than <code>`%`</code>. And <code>`str.Template()`</code> was vastly slower than either, at roughly 16 times slower than <code>`%`</code>.
     </p>
 
     <p>
@@ -301,7 +301,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     <h3>Conclusions</h3>
 
     <p>
-      % may be the fastest operation, but it is also the least powerful. It is probably the best tool for the job if you will only use strings, integers, and doubles.
+      <code>`%`</code> may be the fastest operation, but it is also the least powerful. It is probably the best tool for the job if you will only use strings, integers, and doubles.
     </p>
 
     <p>
@@ -313,7 +313,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     </p>
 
     <p>
-      Well, it boils down to a time before <code>`str.format()`</code> and when % just didn't cut it. When Python programmers didn't like % syntax, they devised a more readable solution - <code>`str.Template()`</code> (described in <a href="https://www.python.org/dev/peps/pep-0292/">PEP 292</a>).
+      Well, it boils down to a time before <code>`str.format()`</code> and when <code>`%`</code> just didn't cut it. When Python programmers didn't like <code>`%`</code> syntax, they devised a more readable solution - <code>`str.Template()`</code> (described in <a href="https://www.python.org/dev/peps/pep-0292/">PEP 292</a>).
     </p>
 
 
@@ -322,7 +322,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     </p>
 
     <p>
-      So if performance is not an issue in your script and you value readability above all else, you may enjoy using <code>`str.Template()`</code>. But if you're formatting alot of strings, sticking to <code>`str.format()`</code> or % may be your best bet.
+      So if performance is not an issue in your script and you value readability above all else, you may enjoy using <code>`str.Template()`</code>. But if you're formatting alot of strings, sticking to <code>`str.format()`</code> or <code>`%`</code> may be your best bet.
     </p>
 
     <p>

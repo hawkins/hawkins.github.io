@@ -1,5 +1,11 @@
 export default [
   {
+    file: "f-string-benchmarking",
+    date: "2016/12/23",
+    title: "Benchmarking F-Strings in Python",
+    summary: "Python 3.6 is very impressive!"
+  },
+  {
     file: "python-string-formatting",
     date: "2016/10/22",
     title: "Benchmarking String Formatting in Python",

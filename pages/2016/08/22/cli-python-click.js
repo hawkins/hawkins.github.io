@@ -166,7 +166,7 @@ Invalid command make
     <h3>Click</h3>
 
     <p>
-      Click, the Command Line Interface Creation Kit, is a library we can use to greatly simplify the code by using decorators to alter and arrange functions. You can check it out on the web <a href="http://click.pocoo.org/5/">here</a>, but for now let's get started by running <code>`pip install click`</code> from the command line.
+      Click, the Command Line Interface Creation Kit, is a library we can use to greatly simplify the code by using decorators to alter and arrange functions. You can check it out on the web <a href="http://click.pocoo.org/5/" target="_blank">here</a>, but for now let's get started by running <code>`pip install click`</code> from the command line.
     </p>
 
     <p>
@@ -336,7 +336,7 @@ Options:
     </p>
 
     <p>
-      So now you know how to write command line apps in Python, and how to do so easily and quickly with Click. You can check out other similar libraries like Click [here](http://docs.python-guide.org/en/latest/scenarios/cli/), but rest assured I'll compare some of them in this same setting in the future.
+      So now you know how to write command line apps in Python, and how to do so easily and quickly with Click. You can check out other similar libraries like Click <a href="http://docs.python-guide.org/en/latest/scenarios/cli/" target="_blank">here</a>, but rest assured I'll compare some of them in this same setting in the future.
     </p>
 
     <p>

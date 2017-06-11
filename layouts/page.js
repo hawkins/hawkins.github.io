@@ -1,16 +1,22 @@
-import React, { Component } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
-import Header from './header'
-import Footer from './footer'
+import React, { Component } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import Header from "./header";
+import Footer from "./footer";
 
-export default class Page extends Component {
-  render() {
-    return (
-      <div className="page">
-        <Head>
-          <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
-          <style>{`
+export default ({ title, children }) => (
+  <div className="page">
+    <Head>
+      <link
+        rel="icon"
+        type="image/png"
+        href="/static/favicon-96x96.png"
+        sizes="96x96"
+      />
+      <title>
+        {title ? title + " - Hawkins Writes Code" : "Hawkins Writes Code"}
+      </title>
+      <style>{`
           html,
           body {
             padding: 0;
@@ -49,16 +55,13 @@ export default class Page extends Component {
             background-color: #ecf0f1;
           }
           `}</style>
-          <title>{ this.props.title }</title>
-        </Head>
-        <Header />
+    </Head>
+    <Header />
 
-        <div className="content">
-          { this.props.children }
-        </div>
+    <div className="content">
+      {children}
+    </div>
 
-        <Footer />
-      </div>
-    )
-  }
-}
+    <Footer />
+  </div>
+);

@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 export default () => (
   <div className="header">
@@ -31,12 +31,9 @@ export default () => (
         text-align: right;
       }
       div.header {
-        padding-left: 20%;
-        padding-right: 20%;
-        padding-top: 30px;
-        padding-bottom: 10px;
+        padding: 30px 20% 10px 20%;
         background-color: black;
       }
     `}</style>
   </div>
-)
+);

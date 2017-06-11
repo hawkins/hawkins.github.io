@@ -17,7 +17,6 @@ export default ({ title, children }) => (
         {title ? title + " - Hawkins Writes Code" : "Hawkins Writes Code"}
       </title>
       <style>{`
-          html,
           body {
             padding: 0;
             margin: 0;
@@ -45,14 +44,22 @@ export default ({ title, children }) => (
             text-decoration: underline;
           }
           h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
           .content {
-            padding-top: 20px;
-            padding-bottom: 20px;
-            padding-left: 20%;
-            padding-right: 20%;
-          }
-          .content {
+            padding: 20px;
             background-color: #ecf0f1;
+          }
+
+          @media (min-width: 700px) {
+            .content {
+              padding: 20px 10%;
+            }
+          }
+
+          @media (min-width: 1024px) {
+            .content {
+              padding: 20px 20%;
+            }
           }
           `}</style>
     </Head>

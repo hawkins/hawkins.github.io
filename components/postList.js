@@ -14,7 +14,18 @@ const PostList = ({ posts }) =>
               {` -- `}
               <i>{post.summary}</i>
             </p>
-            <p>{post.categories.join(", ")}</p>
+            <p>
+              [
+              {post.categories.map((category, index) =>
+                <span>
+                  <Link href={`/posts?category=${category}`}>
+                    <a>{category}</a>
+                  </Link>
+                  {index < post.categories.length - 1 ? ", " : null}
+                </span>
+              )}
+              ]
+            </p>
 
             <style jsx>{`
               h1 {
@@ -47,9 +58,9 @@ const middle = ({ data }) => {
   return <PostList posts={data.getPosts} />;
 };
 
-export default graphql(gql`
-  query getPosts {
-    getPosts {
+const query = gql`
+  query getPosts($category: String) {
+    getPosts(category: $category) {
       title
       id
       categories
@@ -58,4 +69,8 @@ export default graphql(gql`
       link
     }
   }
-`)(middle);
+`;
+
+export default graphql(query, {
+  options: ({ category }) => ({ variables: { category } })
+})(middle);

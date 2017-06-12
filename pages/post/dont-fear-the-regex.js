@@ -1,4 +1,3 @@
-import React from "react";
 import Highlight from "react-highlight";
 import Post from "../../layouts/post";
 
@@ -210,7 +209,9 @@ export default () =>
 
     <p>
       We can use this to match "Joooafhuaisggsh" by combining our knowledge of
-      repeating characters and wildcards in this regex: <code>`/Jo+.*sh/`</code>.
+      repeating characters and wildcards in this regex: <code>
+        `/Jo+.*sh/`
+      </code>.
       To be clear, this will match 1 "J", 1 or more "o", 0 or many{" "}
       <i>wildcards</i>, and 1 "s" and 1 "h". Those five blocks lead us to what
       we call...

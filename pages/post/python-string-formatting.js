@@ -1,4 +1,3 @@
-import React from "react";
 import Highlight from "react-highlight";
 import Post from "../../layouts/post";
 
@@ -401,7 +400,9 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     <p>
       So if performance is not an issue in your script and you value readability
       above all else, you may enjoy using <code>`str.Template()`</code>. But if
-      you're formatting alot of strings, sticking to <code>`str.format()`</code>{" "}
+      you're formatting alot of strings, sticking to <code>
+        `str.format()`
+      </code>{" "}
       or <code>`%`</code> may be your best bet.
     </p>
 

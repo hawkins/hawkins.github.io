@@ -1,8 +1,7 @@
-import React from "react";
 import Page from "../layouts/page";
 
 export default () => (
-  <Page title="About">
+  <Page title="About Me">
     <p>
       This is my personal tech blog.
       Here you'll find anything from hacky how-to's to commentary on a range of technical topics.

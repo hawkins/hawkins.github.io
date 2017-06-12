@@ -1,4 +1,3 @@
-import React from "react";
 import Highlight from "react-highlight";
 import Link from "next/link";
 import Post from "../../layouts/post";

@@ -25,7 +25,8 @@ const getPosts = ({ limit, category }) => {
     return tree[key];
   });
 
-  if (category) posts = posts.filter(post => post.category === category);
+  if (category)
+    posts = posts.filter(post => post.categories.indexOf(category) !== -1);
   posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   if (limit) posts = posts.slice(0, limit);
 

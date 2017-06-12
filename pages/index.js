@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Page from "../layouts/page";
 import PostList from "../components/postList";

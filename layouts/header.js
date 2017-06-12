@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 export default () => (
@@ -8,12 +7,13 @@ export default () => (
     </Link>
     <div className="nav">
       <Link href="/about">
-        <a>About</a>
+        <a>About Me</a>
       </Link>
       <Link href="/projects">
         <a>Project Showcases</a>
       </Link>
     </div>
+
     <style jsx>{`
       h1 {
         color: #ecf0f1;

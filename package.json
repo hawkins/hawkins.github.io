@@ -4,7 +4,7 @@
   "description": "Josh Hawkins's Personal/Tech Blog",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,12 @@
   "author": "Josh Hawkins",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.1",
     "next": "^2.4.2",
-    "react-highlight": "^0.10.0"
+    "react-apollo": "^1.4.2",
+    "react-highlight": "^0.10.0",
+    "require-directory": "^2.1.1"
   }
 }

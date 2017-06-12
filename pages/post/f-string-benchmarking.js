@@ -1,43 +1,57 @@
-import React from 'react'
-import Highlight from 'react-highlight'
-import Link from 'next/link'
-import Post from '../../../../layouts/post'
+import React from "react";
+import Highlight from "react-highlight";
+import Link from "next/link";
+import Post from "../../layouts/post";
 
-export default () => (
+export default () =>
   <Post
     title="Benchmarking F-Strings in Python"
     date="2016/12/23"
-    summary="Python 3.6 is very impressive!">
+    summary="Python 3.6 is very impressive!"
+  >
     <p>
-      If you've not yet read <Link href="/2016/10/22/python-string-formatting">my previous post on Python string benchmarking</Link>, go do so. It's important, so we'll wait for you.
+      If you've not yet read{" "}
+      <Link href="/2016/10/22/python-string-formatting">
+        my previous post on Python string benchmarking
+      </Link>, go do so. It's important, so we'll wait for you.
     </p>
 
-    <hr/>
+    <hr />
 
     <p>
-      Great, welcome back! Python 3.6 was released today, and I couldn't be more excited!
+      Great, welcome back! Python 3.6 was released today, and I couldn't be more
+      excited!
     </p>
 
     <p>
-      There are <a href="https://docs.python.org/3.6/whatsnew/3.6.html">a host of new features for the language</a>, but the one I'd like to focus on is called 'f-strings'.
+      There are{" "}
+      <a href="https://docs.python.org/3.6/whatsnew/3.6.html">
+        a host of new features for the language
+      </a>, but the one I'd like to focus on is called 'f-strings'.
     </p>
 
     <p>
-      I spoke about the new method of string formatting in great detail in my previous blog post, so I won't repeat myself now. Let's cut straight to the meat of this article - benchmarking f-strings!
+      I spoke about the new method of string formatting in great detail in my
+      previous blog post, so I won't repeat myself now. Let's cut straight to
+      the meat of this article - benchmarking f-strings!
     </p>
 
     <h2>Benchmarking</h2>
 
     <p>
-      You'll notice this test is very similar to the last one, because the only difference is that I've included f-strings.
+      You'll notice this test is very similar to the last one, because the only
+      difference is that I've included f-strings.
     </p>
 
     <p>
-      We'll compare these operations by using <code>`timeit`</code> to perform their interpolations in <code>`3`</code> trials of <code>`1000000`</code> operations each. If you're curious, here's the script I wrote to test performance:
+      We'll compare these operations by using <code>`timeit`</code> to perform
+      their interpolations in <code>`3`</code> trials of <code>`1000000`</code>{" "}
+      operations each. If you're curious, here's the script I wrote to test
+      performance:
     </p>
 
     <Highlight className="python">
-{`import timeit
+      {`import timeit
 import string
 
 # How many operations to time
@@ -86,7 +100,10 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     </Highlight>
 
     <p>
-      <i>Please excuse the tabs - they're just for nicer printing at cost of uglier code. I know, I know.</i>
+      <i>
+        Please excuse the tabs - they're just for nicer printing at cost of
+        uglier code. I know, I know.
+      </i>
     </p>
 
     <h3>Results</h3>
@@ -169,43 +186,58 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     </table>
 
     <blockquote>
-      <i>Please refer to older blog post if you'd like to compare result between releases. Here is a quick summary:</i>
+      <i>
+        Please refer to older blog post if you'd like to compare result between
+        releases. Here is a quick summary:
+      </i>
 
-      <br/>
+      <br />
 
-      Previously, <code>`%`</code> was the fastest option by far. <code>`str.format()`</code> was roughly 2.5 times slower than <code>`%`</code>. And <code>`str.Template()`</code> was vastly slower than either, at roughly 16 times slower than <code>`%`</code>.
+      Previously, <code>`%`</code> was the fastest option by far.{" "}
+      <code>`str.format()`</code> was roughly 2.5 times slower than{" "}
+      <code>`%`</code>. And <code>`str.Template()`</code> was vastly slower than
+      either, at roughly 16 times slower than <code>`%`</code>.
     </blockquote>
-
 
     <h3>Conclusions</h3>
 
     <p>
       I'm a little concerned at how fast f-strings are.
       Were it's computations optimized since they were all strings?
-      Either way, the others followed the same procedure and had much worse performance, so I suppose the test is still fair after all!
+      Either way, the others followed the same procedure and had much worse
+      performance, so I suppose the test is still fair after all!
     </p>
 
     <p>
-      F-strings were roughly 1.3 times faster than <code>`%`</code> at best. F-strings are both more powerful than <code>`%`</code> and faster? Wow!
+      F-strings were roughly 1.3 times faster than <code>`%`</code> at best.
+      F-strings are both more powerful than <code>`%`</code> and faster? Wow!
     </p>
 
     <p>
-      <code>`%`</code> was already wildly faster than the others, clocking in at roughly 3 times faster than `str.format()` and 12 times faster than `string.Template()`.
-      This made f-strings roughly 3.8 times faster than `str.format()` and roughly 15.7 times faster than `str.Template()`!
+      <code>`%`</code> was already wildly faster than the others, clocking in at
+      roughly 3 times faster than `str.format()` and 12 times faster than
+      `string.Template()`.
+      This made f-strings roughly 3.8 times faster than `str.format()` and
+      roughly 15.7 times faster than `str.Template()`!
     </p>
 
     <p>
       I'm actually shocked to see it perform so well.
-      I was expecting a heavy price for the wonderful syntax and capability upgrade, but it looks like we got the full-package deal here!
+      I was expecting a heavy price for the wonderful syntax and capability
+      upgrade, but it looks like we got the full-package deal here!
     </p>
 
     <p>
-      With this being only one of dozens of incredible features and improvements to Python 3.6, it's actually quite an incredible upgrade to an already amazing language.
+      With this being only one of dozens of incredible features and improvements
+      to Python 3.6, it's actually quite an incredible upgrade to an already
+      amazing language.
       Great job Python team!
     </p>
 
     <p>
-      <i>For what it's worth, this experiment was conducted using Python 3.6 on Windows 10 with an i5-4690K @ 3.50 GHz.</i>
+      <i>
+        For what it's worth, this experiment was conducted using Python 3.6 on
+        Windows 10 with an i5-4690K @ 3.50 GHz.
+      </i>
     </p>
-  </Post>
-)
+  </Post>;

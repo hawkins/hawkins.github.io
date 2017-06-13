@@ -29,8 +29,6 @@ app.prepare().then(() => {
     else next();
   });
 
-  console.log(schema, root);
-
   server.use(
     "/graphql",
     graphqlHTTP({

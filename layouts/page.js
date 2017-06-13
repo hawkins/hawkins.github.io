@@ -22,15 +22,12 @@ export default ({ title, children }) => (
             margin: 0;
             height: 100%;
             background-color: black;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
           }
           pre {
             margin: 10px;
             border: 1px solid #ff0080;
             overflow-x: auto;
-          }
-          * {
-            font-weight: 300;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
           }
           pre *,
           code {

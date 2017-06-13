@@ -10,9 +10,7 @@ export default withApollo(() => (
       <p>
         Thanks for stopping by - feel free to check out the blog posts below to see what I'm up to lately.
         Or if you're interested to see some of my projects, you can check out my
-        {" "}
-        <Link href="/projects">projects showcase</Link>
-        {" "}
+        <Link href="/projects"> projects showcase </Link>
         page.
       </p>
     </div>

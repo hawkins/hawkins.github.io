@@ -45,7 +45,7 @@ const getProject = args => require(`../projects/${args.id}`);
 const getProjects = () => {
   const tree = requireDirectory(module, "../projects");
   let projects = Object.keys(tree).map(key => tree[key]);
-  return projects;
+  return projects.sort((a, b) => b.id - a.id);
 };
 
 module.exports = {

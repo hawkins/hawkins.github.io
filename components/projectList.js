@@ -12,12 +12,13 @@ const ProjectList = ({ projects }) =>
                 </Link>
               : <h1>{project.title}</h1>}
 
-            <p>{project.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: project.description }} />
             <p dangerouslySetInnerHTML={{ __html: project.motive }} />
-            <blockquote>{project.learned}</blockquote>
+            <blockquote dangerouslySetInnerHTML={{ __html: project.learned }} />
 
             <style jsx>{`
               h1 {
+                color: black;
                 margin-bottom: 0;
               }
               h1:hover {

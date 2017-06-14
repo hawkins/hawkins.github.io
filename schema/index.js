@@ -1,5 +1,5 @@
 const { buildSchema } = require("graphql");
-const requireDirectory = require("require-directory");
+const { Post, Project } = require("../lib/db");
 
 const schema = buildSchema(`
   type Post {
@@ -28,24 +28,20 @@ const schema = buildSchema(`
   }
 `);
 
-const getPost = args => require(`../posts/${args.id}`);
-const getPosts = ({ limit, category }) => {
-  const tree = requireDirectory(module, "../posts");
-  let posts = Object.keys(tree).map(key => tree[key]);
-
-  if (category)
-    posts = posts.filter(post => post.categories.indexOf(category) !== -1);
-  posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-  if (limit) posts = posts.slice(0, limit);
-
+const getPost = async ({ id }) => await Post.findOne({ id });
+const getPosts = async ({ category }) => {
+  let posts;
+  if (category) posts = await Post.find({ categories: category });
+  else posts = await Post.find();
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
   return posts;
 };
 
-const getProject = args => require(`../projects/${args.id}`);
-const getProjects = () => {
-  const tree = requireDirectory(module, "../projects");
-  let projects = Object.keys(tree).map(key => tree[key]);
-  return projects.sort((a, b) => b.id - a.id);
+const getProject = async ({ id }) => await Project.findOne({ id });
+const getProjects = async () => {
+  let projects = await Project.find();
+  projects.sort((a, b) => b.id - a.id);
+  return projects;
 };
 
 module.exports = {

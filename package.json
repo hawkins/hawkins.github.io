@@ -6,12 +6,18 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "cross-env NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "http://www.github.com/hawkins/hawkins.github.io"
+  },
+  "now": {
+    "env": [
+      "MONGO_USER",
+      "MONGO_PASS"
+    ]
   },
   "author": "Josh Hawkins",
   "license": "MIT",
@@ -19,9 +25,13 @@
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
     "graphql": "^0.10.1",
+    "mongoose": "^4.10.6",
     "next": "^2.4.2",
     "react-apollo": "^1.4.2",
     "react-highlight": "^0.10.0",
     "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
   }
 }

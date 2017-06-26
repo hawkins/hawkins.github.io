@@ -7,7 +7,7 @@ const PostList = ({ posts }) =>
         {posts.map(post =>
           <div key={post.title}>
             <Link href={post.link}>
-              <h1>{post.title}</h1>
+              <a className="post">{post.title}</a>
             </Link>
             <p>
               <i>{post.date}</i>
@@ -28,10 +28,14 @@ const PostList = ({ posts }) =>
             </p>
 
             <style jsx>{`
-              h1 {
+              .post {
                 margin-bottom: 0;
+                display: block;
+                font-size: 2em;
+                color: black;
+                font-weight: bold;
               }
-              h1:hover {
+              .post:hover {
                 color: #ff0080;
                 text-decoration: underline;
               }

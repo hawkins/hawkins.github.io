@@ -1,8 +1,0 @@
-module.exports = {
-  id: "cli-python-click",
-  title: "Creating Command Line Applications in Python",
-  date: "2016/08/22",
-  summary: "Comparing Vanilla Python and Click",
-  categories: ["python"],
-  link: "/post/cli-python-click"
-};

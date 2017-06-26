@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default () => (
+export default () =>
   <div className="header">
     <Link href="/">
-      <h1>Hawkins Writes Code</h1>
+      <a className="title">Hawkins Writes Code</a>
     </Link>
     <div className="nav">
       <Link href="/about">
@@ -15,16 +15,19 @@ export default () => (
     </div>
 
     <style jsx>{`
-      h1 {
+      .title {
         color: #ecf0f1;
         text-decoration: none;
         margin-bottom: 20px;
+        display: block;
+        font-size: 2em;
+        font-weight: bold;
       }
-      h1:hover {
+      .title:hover {
         color: #ff0080;
         text-decoration: underline;
       }
-      a:nth-child(n+2) {
+      a:nth-child(n + 2) {
         padding-left: 1em;
       }
       div.nav {
@@ -35,5 +38,4 @@ export default () => (
         background-color: black;
       }
     `}</style>
-  </div>
-);
+  </div>;

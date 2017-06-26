@@ -12,7 +12,7 @@ const schema = buildSchema(`
   }
 
   type Project {
-    id: String!
+    id: Int!
     title: String!
     link: String
     description: String
@@ -23,7 +23,7 @@ const schema = buildSchema(`
   type Query {
     getPost(id: String!): Post
     getPosts(category: String, limit: Int): [Post]
-    getProject(id: String!): Project
+    getProject(id: Int!): Project
     getProjects: [Project]
   }
 `);

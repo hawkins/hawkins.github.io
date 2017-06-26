@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "./header";
 import Footer from "./footer";
 
-export default ({ title, children }) => (
+export default ({ title, children }) =>
   <div className="page">
     <Head>
       <link
@@ -17,48 +17,48 @@ export default ({ title, children }) => (
         {title ? title + " - Hawkins Writes Code" : "Hawkins Writes Code"}
       </title>
       <style>{`
-          body {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            background-color: black;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
-          }
-          pre {
-            margin: 10px;
-            border: 1px solid #ff0080;
-            overflow-x: auto;
-          }
-          pre *,
-          code {
-            font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
-          }
-          a {
-            color: #ff0080;
-            text-decoration: none;
-          }
-          a:hover {
-            text-decoration: underline;
-          }
-          h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+        body {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          background-color: black;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+        }
+        pre {
+          margin: 10px;
+          border: 1px solid #ff0080;
+          overflow-x: auto;
+        }
+        pre *,
+        code {
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
+        }
+        a {
+          color: #ff0080;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
+        .content {
+          padding: 20px;
+          background-color: #ecf0f1;
+        }
+
+        @media (min-width: 700px) {
           .content {
-            padding: 20px;
-            background-color: #ecf0f1;
+            padding: 20px 10%;
           }
+        }
 
-          @media (min-width: 700px) {
-            .content {
-              padding: 20px 10%;
-            }
+        @media (min-width: 1024px) {
+          .content {
+            padding: 20px 20%;
           }
-
-          @media (min-width: 1024px) {
-            .content {
-              padding: 20px 20%;
-            }
-          }
-          `}</style>
+        }
+      `}</style>
     </Head>
     <Header />
 
@@ -67,5 +67,4 @@ export default ({ title, children }) => (
     </div>
 
     <Footer />
-  </div>
-);
+  </div>;

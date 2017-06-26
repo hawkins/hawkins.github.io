@@ -1,7 +1,7 @@
 import Page from "./page";
 
-export default ({ title, children }) => (
-  <Page title={title}>
+export default ({ title, children }) =>
+  <Page title={`writing about ${title}`}>
     {children}
     {/* TODO: Social media buttons */}
     {/*<span>If you enjoyed this article, please share it below! If you have your own reasons for using one style over another <i>please drop me a line or mention me on Twitter!</i></span>*/}
@@ -79,5 +79,4 @@ export default ({ title, children }) => (
         font-weight: bold;
       }
     `}</style>
-  </Page>
-);
+  </Page>;

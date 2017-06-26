@@ -1,20 +1,26 @@
 import Link from "next/link";
 
-export default () =>
+export default ({ title }) =>
   <div className="header">
     <Link href="/">
-      <a className="title">Hawkins Writes Code</a>
+      <a className="title">Josh Hawkins is...</a>
     </Link>
+    {title ? <h2>{title}</h2> : null}
+
     <div className="nav">
-      <Link href="/about">
+      <Link href="/introducing-himself">
         <a>About Me</a>
       </Link>
-      <Link href="/projects">
-        <a>Project Showcases</a>
+      <Link href="/an-open-source-fanatic">
+        <a>Projects Showcases</a>
       </Link>
     </div>
 
     <style jsx>{`
+      h2 {
+        color: #ecf0f1;
+        text-indent: 40px;
+      }
       .title {
         color: #ecf0f1;
         text-decoration: none;

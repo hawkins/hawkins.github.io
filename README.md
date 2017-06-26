@@ -1,4 +1,4 @@
-# Hawkins Writes Code
+# Hawkins is...
 
 This is the repo powering my tech blog.
 

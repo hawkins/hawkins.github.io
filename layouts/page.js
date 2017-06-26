@@ -14,7 +14,7 @@ export default ({ title, children }) =>
         sizes="96x96"
       />
       <title>
-        {title ? title + " - Hawkins Writes Code" : "Hawkins Writes Code"}
+        {title ? "Hawkins is " + title : "Hawkins is ..."}
       </title>
       <style>{`
         body {
@@ -60,7 +60,7 @@ export default ({ title, children }) =>
         }
       `}</style>
     </Head>
-    <Header />
+    <Header title={title} />
 
     <div className="content">
       {children}

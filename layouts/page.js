@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 export default ({ title, children }) =>
   <div className="page">
@@ -14,7 +14,7 @@ export default ({ title, children }) =>
         sizes="96x96"
       />
       <title>
-        {title ? "Hawkins is " + title : "Hawkins is ..."}
+        {title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
       </title>
       <style>{`
         body {

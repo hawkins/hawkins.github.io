@@ -1,5 +1,5 @@
 const { buildSchema } = require("graphql");
-const { Post, Project } = require("../lib/db");
+const { Post, Project } = require("./lib/db");
 
 const schema = buildSchema(`
   type Post {

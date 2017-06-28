@@ -1,23 +1,18 @@
 {
-  "name": "hawkins-writes-code",
+  "name": "josh-hawkins-is",
   "version": "2.0.0",
   "description": "Josh Hawkins's Personal/Tech Blog",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "now && now alias"
   },
   "repository": {
     "type": "git",
-    "url": "http://www.github.com/hawkins/hawkins.github.io"
-  },
-  "now": {
-    "env": [
-      "MONGO_USER",
-      "MONGO_PASS"
-    ]
+    "url": "http://www.github.com/hawkins/is"
   },
   "author": "Josh Hawkins",
   "license": "MIT",

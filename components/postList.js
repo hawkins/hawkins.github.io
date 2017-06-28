@@ -17,7 +17,7 @@ const PostList = ({ posts }) =>
             <p>
               [
               {post.categories.map((category, index) =>
-                <span>
+                <span key={`${category}-${post.link}`}>
                   <Link href={`/writing-about?category=${category}`}>
                     <a>{category}</a>
                   </Link>

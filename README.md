@@ -1,6 +1,8 @@
-# Hawkins is...
+# Josh Hawkins is...
 
-This is the repo powering my tech blog.
+This is the repo powering my tech blog / personal site.
+
+It's written to be hosted on a `.is` TLD and have URLs be human readable (`josh.hawkins.is/a-writer`). You can easily fork this repo and add your own content to achieve the same effect!
 
 It's written entirely in JavaScript and utilizes [Next.js](https://github.com/zeit/next.js) for server-side rendering with React.
 
@@ -9,8 +11,8 @@ If you're unimpressed, I wrote this in a bit of spare time between more fun and 
 ## Publishing an article
 
 1. Draft the article in `/pages/post`
-  - This link can be shared but won't be publically visible until added to the database
-2. Add to database to make public
+    - This link can be shared but won't be publicly visible until added to the database
+2. Add to database to make public / discoverable
 
 ## Publishing a project
 

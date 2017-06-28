@@ -6,6 +6,16 @@ export default () =>
       This is my personal tech blog. Here you'll find anything from hacky
       how-to's to commentary on a range of technical topics.
     </p>
+
+    <p>
+      If you're interested to see my resume, you can download the latest version
+      {" "}
+      <a href="https://github.com/hawkins/resume/raw/master/resume.pdf">here</a>
+      .
+    </p>
+
+    <hr />
+
     <p>
       I'm a passionate front-end developer with significant experience in
       React.js and its surrounding ecosystem. I'm a strong supporter of open

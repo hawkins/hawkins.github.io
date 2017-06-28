@@ -1,23 +1,21 @@
 import React from "react";
 
-export default () => (
+export default () =>
   <div>
     <span>Also find Josh on </span>
     <a href="https://github.com/hawkins">GitHub</a>
     <span> or </span>
     <a href="https://twitter.com/hawkinjs">Twitter</a>
+    <span>, or download his latest </span>
+    <a href="https://github.com/hawkins/resume/raw/master/resume.pdf">resume</a>
     <span>!</span>
 
     <style jsx>{`
       div {
         text-align: center;
-        padding-top: 30px;
-        padding-left: 20%;
-        padding-right: 20%;
-        padding-bottom: 30px;
+        padding: 30px 20%;
         background-color: black;
         color: #ecf0f1;
       }
     `}</style>
-  </div>
-);
+  </div>;

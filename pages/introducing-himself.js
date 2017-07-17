@@ -3,8 +3,12 @@ import Page from "../layouts/page";
 export default () =>
   <Page title="introducing himself">
     <p>
-      This is my personal tech blog. Here you'll find anything from hacky
-      how-to's to commentary on a range of technical topics.
+      I'm a passionate front-end developer with significant experience in
+      React.js and its surrounding ecosystem. I'm a strong supporter of open
+      source software, so I spend my free time contributing and maintaining
+      several open source projects, largely with Node.js and React.js. You can
+      find most of them on my GitHub profile
+      <a href="http://www.github.com/hawkins" target="_blank"> @hawkins</a>!
     </p>
 
     <p>
@@ -12,17 +16,6 @@ export default () =>
       {" "}
       <a href="https://github.com/hawkins/resume/raw/master/resume.pdf">here</a>
       .
-    </p>
-
-    <hr />
-
-    <p>
-      I'm a passionate front-end developer with significant experience in
-      React.js and its surrounding ecosystem. I'm a strong supporter of open
-      source software, so I spend my free time contributing and maintaining
-      several open source projects, largely with Node.js and React.js. You can
-      find most of them on my GitHub profile
-      <a href="http://www.github.com/hawkins" target="_blank"> @hawkins</a>!
     </p>
 
     <p>

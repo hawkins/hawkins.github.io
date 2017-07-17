@@ -33,13 +33,14 @@ export default ({ title }) =>
         color: #ff0080;
         text-decoration: underline;
       }
-      a:nth-child(n + 2) {
-        padding-left: 1em;
-      }
-      div.nav {
+      .nav {
         text-align: right;
       }
-      div.header {
+      .nav > * {
+        margin-left: 10px;
+        white-space: nowrap;
+      }
+      .header {
         padding: 30px 20% 10px 20%;
         background-color: black;
       }

@@ -44,7 +44,7 @@ export default ({ title, children }) =>
 
         .content {
           padding: 20px;
-          background-color: #ecf0f1;
+          background-color: #fff;
         }
 
         @media (min-width: 700px) {

@@ -145,7 +145,7 @@ export default () =>
       buddy Josh, Eli."
     </p>
 
-    <h3> Quatntifiers (Repeating Characters)</h3>
+    <h3> Quantifiers (Repeating Characters)</h3>
 
     <h4>0 or Many</h4>
 

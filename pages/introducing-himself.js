@@ -1,6 +1,6 @@
 import Page from "../layouts/page";
 
-export default () =>
+export default () => (
   <Page title="introducing himself">
     <p>
       I'm a passionate front-end developer with significant experience in
@@ -8,13 +8,15 @@ export default () =>
       source software, so I spend my free time contributing and maintaining
       several open source projects, largely with Node.js and React.js. You can
       find most of them on my GitHub profile
-      <a href="http://www.github.com/hawkins" target="_blank"> @hawkins</a>!
+      <a href="http://www.github.com/hawkins" target="_blank">
+        {" "}
+        @hawkins
+      </a>!
     </p>
 
     <p>
-      If you're interested to see my resume, you can download the latest version
-      {" "}
-      <a href="https://github.com/hawkins/resume/raw/master/resume.pdf">here</a>
+      If you're interested to see my resume, you can download the latest version{" "}
+      <a href="https://hawkins-resume.now.sh">here</a>
       .
     </p>
 
@@ -33,4 +35,5 @@ export default () =>
       free to look at my other projects if you're interested to see something
       cool or where my passion really shines!
     </p>
-  </Page>;
+  </Page>
+);

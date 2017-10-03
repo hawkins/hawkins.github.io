@@ -1,11 +1,11 @@
-export default () =>
+export default () => (
   <div>
     <span>Also find Josh on </span>
     <a href="https://github.com/hawkins">GitHub</a>
     <span> or </span>
     <a href="https://twitter.com/hawkinjs">Twitter</a>
     <span>, or download his latest </span>
-    <a href="https://github.com/hawkins/resume/raw/master/resume.pdf">resume</a>
+    <a href="https://hawkins-resume.now.sh">resume</a>
     <span>!</span>
 
     <style jsx>{`
@@ -16,4 +16,5 @@ export default () =>
         color: #ecf0f1;
       }
     `}</style>
-  </div>;
+  </div>
+);

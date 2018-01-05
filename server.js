@@ -1,3 +1,6 @@
+// Read env vars from .env
+require("dotenv").config();
+
 const next = require("next");
 const express = require("express");
 const graphqlHTTP = require("express-graphql");

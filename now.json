@@ -1,11 +1,4 @@
 {
-  "env": [
-    "MONGO_USER",
-    "MONGO_PASS"
-  ],
-  "alias": [
-    "www.hawkins.is",
-    "josh.hawkins.is",
-    "hawkins.is"
-  ]
+  "dotenv": true,
+  "alias": ["www.hawkins.is", "josh.hawkins.is", "hawkins.is"]
 }

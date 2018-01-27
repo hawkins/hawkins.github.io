@@ -14,6 +14,19 @@ const Page = ({ title, children }) => (
         href="/static/favicon-96x96.png"
         sizes="96x96"
       />
+      <meta property="og:image" content="http://hawkins.is/static/og.jpg" />
+      <meta property="og:image:url" content="http://hawkins.is/static/og.jpg" />
+      <meta
+        property="og:image:secure_url"
+        content="https://hawkins.is/static/og.jpg"
+      />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:height" content="200" />
+      <meta property="og:image:width" content="200" />
+      <meta
+        property="og:image:alt"
+        content="Josh Hawkins performing a skateboard trick"
+      />
       <title>{title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}</title>
       <style>{`
         body {

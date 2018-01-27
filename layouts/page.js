@@ -5,7 +5,8 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import PropTypes from "prop-types";
 
-const { NOW_URL } = process.env;
+const HTTP_URL = "http://hawkins.is";
+const HTTPS_URL = "https://hawkins.is";
 
 const Page = ({ title, children }) => (
   <div className="page">
@@ -20,7 +21,12 @@ const Page = ({ title, children }) => (
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Josh Hawkins is..." />
-      <meta property="og:image" content={NOW_URL + "/static/og.jpg"} />
+      <meta property="og:image" content={HTTP_URL + "/static/og.jpg"} />
+      <meta property="og:image:url" content={HTTP_URL + "/static/og.jpg"} />
+      <meta
+        property="og:image:secure_url"
+        content={HTTPS_URL + "/static/og.jpg"}
+      />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:height" content="200" />
       <meta property="og:image:width" content="200" />
@@ -29,7 +35,7 @@ const Page = ({ title, children }) => (
         content="Josh Hawkins performing a skateboard trick"
       />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content={NOW_URL + "/static/og.jpg"} />
+      <meta name="twitter:image" content={HTTP_URL + "/static/og.jpg"} />
       <meta name="twitter:site" content="@hawkinjs" />
       <meta name="twitter:site:id" content="@hawkinjs" />
       <meta name="twitter:creator" content="@hawkinjs" />

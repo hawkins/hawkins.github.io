@@ -1,6 +1,7 @@
 import Page from "./page";
+import PropTypes from "prop-types";
 
-export default ({ title, children }) =>
+const Post = ({ title, children }) => (
   <Page title={`writing about ${title}`}>
     {children}
     {/* TODO: Social media buttons */}
@@ -79,4 +80,12 @@ export default ({ title, children }) =>
         font-weight: bold;
       }
     `}</style>
-  </Page>;
+  </Page>
+);
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
+export default Post;

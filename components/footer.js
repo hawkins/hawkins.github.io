@@ -1,4 +1,4 @@
-export default () => (
+const Footer = () => (
   <div>
     <span>Also find Josh on </span>
     <a href="https://github.com/hawkins">GitHub</a>
@@ -18,3 +18,5 @@ export default () => (
     `}</style>
   </div>
 );
+
+export default Footer;

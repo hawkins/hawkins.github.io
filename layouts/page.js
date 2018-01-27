@@ -3,8 +3,9 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import PropTypes from "prop-types";
 
-export default ({ title, children }) =>
+const Page = ({ title, children }) => (
   <div className="page">
     <Head>
       <link
@@ -13,9 +14,7 @@ export default ({ title, children }) =>
         href="/static/favicon-96x96.png"
         sizes="96x96"
       />
-      <title>
-        {title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
-      </title>
+      <title>{title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}</title>
       <style>{`
         body {
           padding: 0;
@@ -62,9 +61,15 @@ export default ({ title, children }) =>
     </Head>
     <Header title={title} />
 
-    <div className="content">
-      {children}
-    </div>
+    <div className="content">{children}</div>
 
     <Footer />
-  </div>;
+  </div>
+);
+
+Page.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
+
+export default Page;

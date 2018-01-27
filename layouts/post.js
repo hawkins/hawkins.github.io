@@ -15,6 +15,7 @@ const Post = ({ title, children, date, summary }) => (
       <meta property="og:article:author:last_name" content="Hawkins" />
       <meta property="og:article:author:username" content="@hawkinjs" />
       <meta property="og:article:author:gender" content="male" />
+      <meta name="twitter:description" content={summary} />
     </Head>
 
     {children}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Page from "../layouts/page";
 import Greeting from "../components/greeting";
 
-export default () =>
+export default () => (
   <Page>
     <Greeting />
 
@@ -14,16 +14,16 @@ export default () =>
         </Link>
       </li>
       <li>
-        <Link prefetch href="/a-writer"><a>a writer</a></Link>
+        <Link prefetch href="/a-writer">
+          <a>a writer</a>
+        </Link>
       </li>
       <li>
-        available for hire! Be sure to
-        {" "}
+        available for hire! Be sure to{" "}
         <Link prefetch href="mailto:hawkinswritescode@gmail.com">
           <a>get in contact</a>
-        </Link>
-        {" "}
-        with me if you'd like to team up to build amazing things.
+        </Link>{" "}
+        with him if you'd like to team up to build amazing things.
       </li>
     </ul>
 
@@ -36,4 +36,5 @@ export default () =>
         padding-top: 10px;
       }
     `}</style>
-  </Page>;
+  </Page>
+);

@@ -3,8 +3,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import PropTypes from "prop-types";
 
-export default ({ title, children }) =>
+const { NOW_URL } = process.env;
+
+const Page = ({ title, children }) => (
   <div className="page">
     <Head>
       <link
@@ -13,9 +16,37 @@ export default ({ title, children }) =>
         href="/static/favicon-96x96.png"
         sizes="96x96"
       />
-      <title>
-        {title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
-      </title>
+      <meta property="og:url" content="https://hawkins.is" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Josh Hawkins is..." />
+      <meta property="og:image" content={NOW_URL + "/static/og.jpg"} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:height" content="200" />
+      <meta property="og:image:width" content="200" />
+      <meta
+        property="og:image:alt"
+        content="Josh Hawkins performing a skateboard trick"
+      />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content={NOW_URL + "/static/og.jpg"} />
+      <meta name="twitter:site" content="@hawkinjs" />
+      <meta name="twitter:site:id" content="@hawkinjs" />
+      <meta name="twitter:creator" content="@hawkinjs" />
+      <meta name="twitter:creator:id" content="@hawkinjs" />
+      <meta
+        name="twitter:description"
+        content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
+      />
+      <meta
+        name="twitter:title"
+        content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
+      />
+      <meta
+        name="og:title"
+        content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
+      />
+      <title>{title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}</title>
       <style>{`
         body {
           padding: 0;
@@ -62,9 +93,15 @@ export default ({ title, children }) =>
     </Head>
     <Header title={title} />
 
-    <div className="content">
-      {children}
-    </div>
+    <div className="content">{children}</div>
 
     <Footer />
-  </div>;
+  </div>
+);
+
+Page.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
+
+export default Page;

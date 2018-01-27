@@ -2,7 +2,7 @@ import Highlight from "react-highlight";
 import Link from "next/link";
 import Post from "../../layouts/post";
 
-export default () =>
+export default () => (
   <Post
     title="Benchmarking F-Strings in Python"
     date="2016/12/23"
@@ -10,7 +10,7 @@ export default () =>
   >
     <p>
       If you've not yet read{" "}
-      <Link href="/2016/10/22/python-string-formatting">
+      <Link href="/writing-about/python-string-formatting">
         my previous post on Python string benchmarking
       </Link>, go do so. It's important, so we'll wait for you.
     </p>
@@ -107,81 +107,49 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
 
     <h3>Results</h3>
 
-    <p>
-      And the output was as follows (time in seconds):
-    </p>
+    <p>And the output was as follows (time in seconds):</p>
 
     <table>
-      <tr>
-        <th>
-          Type
-        </th>
-        <th>
-          Trial 2
-        </th>
-        <th>
-          Trial 3
-        </th>
-        <th>
-          Trial 4
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <code>`%`</code>
-        </td>
-        <td>
-          0.358393278391
-        </td>
-        <td>
-          0.359634358312
-        </td>
-        <td>
-          0.357803165661
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>`str.format()`</code>
-        </td>
-        <td>
-          1.075245370745
-        </td>
-        <td>
-          1.076750640947
-        </td>
-        <td>
-          1.071864144756
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>`str.Template()`</code>
-        </td>
-        <td>
-          4.411845730430
-        </td>
-        <td>
-          4.605993111158
-        </td>
-        <td>
-          4.499692948284
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>`f-string`</code>
-        </td>
-        <td>
-          0.272246474610
-        </td>
-        <td>
-          0.278632974750
-        </td>
-        <td>
-          0.301266738268
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <th>Type</th>
+          <th>Trial 2</th>
+          <th>Trial 3</th>
+          <th>Trial 4</th>
+        </tr>
+        <tr>
+          <td>
+            <code>`%`</code>
+          </td>
+          <td>0.358393278391</td>
+          <td>0.359634358312</td>
+          <td>0.357803165661</td>
+        </tr>
+        <tr>
+          <td>
+            <code>`str.format()`</code>
+          </td>
+          <td>1.075245370745</td>
+          <td>1.076750640947</td>
+          <td>1.071864144756</td>
+        </tr>
+        <tr>
+          <td>
+            <code>`str.Template()`</code>
+          </td>
+          <td>4.411845730430</td>
+          <td>4.605993111158</td>
+          <td>4.499692948284</td>
+        </tr>
+        <tr>
+          <td>
+            <code>`f-string`</code>
+          </td>
+          <td>0.272246474610</td>
+          <td>0.278632974750</td>
+          <td>0.301266738268</td>
+        </tr>
+      </tbody>
     </table>
 
     <blockquote>
@@ -189,9 +157,7 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
         Please refer to older blog post if you'd like to compare result between
         releases. Here is a quick summary:
       </i>
-
       <br />
-
       Previously, <code>`%`</code> was the fastest option by far.{" "}
       <code>`str.format()`</code> was roughly 2.5 times slower than{" "}
       <code>`%`</code>. And <code>`str.Template()`</code> was vastly slower than
@@ -201,10 +167,10 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     <h3>Conclusions</h3>
 
     <p>
-      I'm a little concerned at how fast f-strings are.
-      Were it's computations optimized since they were all strings?
-      Either way, the others followed the same procedure and had much worse
-      performance, so I suppose the test is still fair after all!
+      I'm a little concerned at how fast f-strings are. Were it's computations
+      optimized since they were all strings? Either way, the others followed the
+      same procedure and had much worse performance, so I suppose the test is
+      still fair after all!
     </p>
 
     <p>
@@ -215,22 +181,20 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
     <p>
       <code>`%`</code> was already wildly faster than the others, clocking in at
       roughly 3 times faster than `str.format()` and 12 times faster than
-      `string.Template()`.
-      This made f-strings roughly 3.8 times faster than `str.format()` and
-      roughly 15.7 times faster than `str.Template()`!
+      `string.Template()`. This made f-strings roughly 3.8 times faster than
+      `str.format()` and roughly 15.7 times faster than `str.Template()`!
     </p>
 
     <p>
-      I'm actually shocked to see it perform so well.
-      I was expecting a heavy price for the wonderful syntax and capability
-      upgrade, but it looks like we got the full-package deal here!
+      I'm actually shocked to see it perform so well. I was expecting a heavy
+      price for the wonderful syntax and capability upgrade, but it looks like
+      we got the full-package deal here!
     </p>
 
     <p>
       With this being only one of dozens of incredible features and improvements
       to Python 3.6, it's actually quite an incredible upgrade to an already
-      amazing language.
-      Great job Python team!
+      amazing language. Great job Python team!
     </p>
 
     <p>
@@ -239,4 +203,5 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
         Windows 10 with an i5-4690K @ 3.50 GHz.
       </i>
     </p>
-  </Post>;
+  </Post>
+);

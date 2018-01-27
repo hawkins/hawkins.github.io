@@ -1,6 +1,7 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-export default ({ title }) =>
+const Header = ({ title }) => (
   <div className="header">
     <Link href="/">
       <a className="title">Josh Hawkins is...</a>
@@ -45,4 +46,11 @@ export default ({ title }) =>
         background-color: black;
       }
     `}</style>
-  </div>;
+  </div>
+);
+
+Header.propTypes = {
+  title: PropTypes.string
+};
+
+export default Header;

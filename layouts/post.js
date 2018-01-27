@@ -1,7 +1,23 @@
+import Head from "next/head";
+import PropTypes from "prop-types";
 import Page from "./page";
 
-export default ({ title, children }) =>
+const Post = ({ title, children, date, summary }) => (
   <Page title={`writing about ${title}`}>
+    <Head>
+      <meta property="og:description" content={summary} />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:article:published_time"
+        content={date.replace("/", "-")}
+      />
+      <meta property="og:article:author:first_name" content="Josh" />
+      <meta property="og:article:author:last_name" content="Hawkins" />
+      <meta property="og:article:author:username" content="@hawkinjs" />
+      <meta property="og:article:author:gender" content="male" />
+      <meta name="twitter:description" content={summary} />
+    </Head>
+
     {children}
     {/* TODO: Social media buttons */}
     {/*<span>If you enjoyed this article, please share it below! If you have your own reasons for using one style over another <i>please drop me a line or mention me on Twitter!</i></span>*/}
@@ -79,4 +95,14 @@ export default ({ title, children }) =>
         font-weight: bold;
       }
     `}</style>
-  </Page>;
+  </Page>
+);
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
+export default Post;

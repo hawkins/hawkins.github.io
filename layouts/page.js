@@ -38,6 +38,14 @@ const Page = ({ title, children }) => (
         name="twitter:description"
         content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
       />
+      <meta
+        name="twitter:title"
+        content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
+      />
+      <meta
+        name="og:title"
+        content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
+      />
       <title>{title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}</title>
       <style>{`
         body {

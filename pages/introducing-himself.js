@@ -3,11 +3,11 @@ import Page from "../layouts/page";
 export default () => (
   <Page title="introducing himself">
     <p>
-      I'm a passionate front-end developer with significant experience in
-      React.js and its surrounding ecosystem. I'm a strong supporter of open
-      source software, so I spend my free time contributing and maintaining
-      several open source projects, largely with Node.js and React.js. You can
-      find most of them on my GitHub profile
+      I'm a passionate web developer with significant experience in React.js and
+      its surrounding ecosystem. I'm a strong supporter of open source software,
+      so I spend my free time contributing and maintaining several open source
+      projects, largely with Node.js and React.js. You can find most of them on
+      my GitHub profile
       <a href="http://www.github.com/hawkins" target="_blank">
         {" "}
         @hawkins

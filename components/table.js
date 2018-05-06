@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 // Big thanks to https://codepen.io/nhackley/pen/QbGoLN for this nifty Table :)
 
@@ -9,19 +10,24 @@ class Table extends Component {
     return [
       <table className="responsive-table" key="table">
         <thead>
-          <tr>{Object.keys(columns).map(col => <th>{columns[col]}</th>)}</tr>
+          <tr>
+            {Object.keys(columns).map(col => <th key={col}>{columns[col]}</th>)}
+          </tr>
         </thead>
         <tbody>
-          {rows.map(row => (
-            <tr>
+          {rows.map((row, index) => (
+            <tr key={index}>
               {Object.keys(columns).map(column => (
-                <td data-label={columns[column]}>{row[column]}</td>
+                <td data-label={columns[column]} key={column}>
+                  {row[column]}
+                </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>,
-      <style key="style">{`.responsive-table {
+      <style key="style">
+        {`.responsive-table {
         width: 100%;
         margin: 0;
         padding: 0;
@@ -85,11 +91,15 @@ class Table extends Component {
           display: none;
         }
       }
-      `}</style>
+      `}
+      </style>
     ];
   }
 }
 
-// TODO: Proptypes
+Table.propTypes = {
+  columns: PropTypes.object.isRequired,
+  rows: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 module.exports = Table;

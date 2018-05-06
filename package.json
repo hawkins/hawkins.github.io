@@ -17,17 +17,21 @@
   "author": "Josh Hawkins",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^4.0.0",
+    "apollo-client": "^2.3.1",
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
+    "dotenv": "^5.0.1",
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
-    "graphql": "^0.12.3",
-    "mongoose": "^4.10.6",
-    "next": "^4.2.3",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "mongoose": "^5.0.17",
+    "next": "^6.0.0",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-apollo": "^1.4.2",
+    "react": "^16.3.0",
+    "react-apollo": "^2.1.4",
     "react-dom": "^16.2.0",
-    "react-highlight": "briancappello/react-highlight#react-v16-compiled"
+    "react-highlight": "^0.12.0"
   },
   "devDependencies": {
     "cross-env": "^5.0.1"

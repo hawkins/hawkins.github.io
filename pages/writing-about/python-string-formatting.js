@@ -1,5 +1,6 @@
 import Highlight from "react-highlight";
 import Post from "../../layouts/post";
+import Table from "../../components/table";
 
 export default () => (
   <Post

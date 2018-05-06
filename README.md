@@ -10,17 +10,23 @@ If you're unimpressed, I wrote this in a bit of spare time between more fun and 
 
 ## Deploying to `now.sh`
 
-1. Deploy with `now`
-  - Enter the username and password for a read-only user for the mlab instance
-2. Double-check that the site works as expected with any new changes in production
-3. Once confirmed, alias with `now alias`
+1.  Fill out the `.env` file with necessary environment variables
+2.  Deploy with `now`
+3.  Double-check that the site works as expected with any new changes in production
+4.  Once confirmed, alias with `now alias`
 
 ## Publishing an article
 
-1. Draft the article in `/pages/post`
-    - This link can be shared but won't be publicly visible until added to the database
-2. Add to database to make public / discoverable
+1.  Draft the article in `/pages/writing-about` (This link can be shared but won't be publicly visible until added to the database)
+2.  Add to database to make public / discoverable
 
 ## Publishing a project
 
-1. Simply write the project according to the GraphQL schema and add it to the database
+1.  Simply write the project according to the GraphQL schema and add it to the database
+
+## Configuration
+
+Drop a `.env` file in the root folder and populate the following values:
+
+* MONGO_USER
+* MONGO_PASS

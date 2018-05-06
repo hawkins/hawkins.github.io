@@ -1,13 +1,12 @@
 import Highlight from "react-highlight";
 import Post from "../../layouts/post";
 
-export default () =>
+export default () => (
   <Post
     title="Benchmarking String Formatting in Python"
     date="2016/10/22"
     summary="Performance and Syntax - Or Why I'm Excited for Python 3.6"
   >
-
     <p>
       The Zen of Python is pretty clear on having multiple ways to do something.
       In fact, it has this to say about it:
@@ -23,9 +22,7 @@ export default () =>
       <i>idiomatic</i> (dare I say <i>Pythonic</i>?) way to do it.
     </p>
 
-    <p>
-      That is... until you look at string formatting.
-    </p>
+    <p>That is... until you look at string formatting.</p>
 
     <p>
       String formatting is one of those things where you need to do it alot, so
@@ -94,7 +91,9 @@ export default () =>
       using each of them.
     </p>
 
-    <h3><code>`%`</code>-formatting</h3>
+    <h3>
+      <code>`%`</code>-formatting
+    </h3>
 
     <p>
       <a href="https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting">
@@ -289,68 +288,31 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
 
     <h3>Results</h3>
 
-    <p>
-      And the output was as follows (time in seconds):
-    </p>
+    <p>And the output was as follows (time in seconds):</p>
 
-    <table>
-      <tr>
-        <th>
-          Type
-        </th>
-        <th>
-          Trial 2
-        </th>
-        <th>
-          Trial 3
-        </th>
-        <th>
-          Trial 4
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <code>`%`</code>
-        </td>
-        <td>
-          0.255867058399
-        </td>
-        <td>
-          0.256962734151
-        </td>
-        <td>
-          0.275552650658
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>`str.format()`</code>
-        </td>
-        <td>
-          0.683378964547
-        </td>
-        <td>
-          0.67034378765
-        </td>
-        <td>
-          0.660407515312
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <code>`str.Template()`</code>
-        </td>
-        <td>
-          4.0731706778
-        </td>
-        <td>
-          3.9941664409
-        </td>
-        <td>
-          3.90372740406
-        </td>
-      </tr>
-    </table>
+    <Table
+      columns={{ t: "Type", t1: "Trial 1", t2: "Trial 2", t3: "Trial 3" }}
+      rows={[
+        {
+          t: "`%`",
+          t1: "0.255867058399",
+          t2: "0.256962734151",
+          t3: "0.275552650658"
+        },
+        {
+          t: "`str.format()`",
+          t1: "0.683378964547",
+          t2: "0.67034378765",
+          t3: "0.660407515312"
+        },
+        {
+          t: "`str.Template()`",
+          t1: "4.0731706778",
+          t2: "3.9941664409",
+          t3: "3.90372740406"
+        }
+      ]}
+    />
 
     <p>
       As you can see, <code>`%`</code> was the fastest option by far.{" "}
@@ -400,9 +362,7 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
     <p>
       So if performance is not an issue in your script and you value readability
       above all else, you may enjoy using <code>`str.Template()`</code>. But if
-      you're formatting alot of strings, sticking to <code>
-        `str.format()`
-      </code>{" "}
+      you're formatting alot of strings, sticking to <code>`str.format()`</code>{" "}
       or <code>`%`</code> may be your best bet.
     </p>
 
@@ -418,4 +378,5 @@ print(output.substitute(a=template_times[0], b=template_times[1], c=template_tim
         felt, potentially unaware of the performance costs awaiting them?)
       </i>
     </p>
-  </Post>;
+  </Post>
+);

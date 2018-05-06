@@ -1,7 +1,8 @@
 import Highlight from "react-highlight";
 import Post from "../../layouts/post";
+import Table from "../../components/table";
 
-export default () =>
+export default () => (
   <Post
     title="(Don't Fear) The Regex"
     date="2016/09/08"
@@ -116,9 +117,7 @@ export default () =>
       robots.
     </p>
 
-    <p>
-      ...
-    </p>
+    <p>...</p>
 
     <p>
       Our bot will use the pattern <code>`/Josh/`</code> to match the strings.
@@ -135,9 +134,7 @@ export default () =>
       Mission accomplished!
     </p>
 
-    <p>
-      Or was it?
-    </p>
+    <p>Or was it?</p>
 
     <p>
       What if our bot was more intelligent? What if the bot addressed whoever
@@ -209,9 +206,7 @@ export default () =>
 
     <p>
       We can use this to match "Joooafhuaisggsh" by combining our knowledge of
-      repeating characters and wildcards in this regex: <code>
-        `/Jo+.*sh/`
-      </code>.
+      repeating characters and wildcards in this regex: <code>`/Jo+.*sh/`</code>.
       To be clear, this will match 1 "J", 1 or more "o", 0 or many{" "}
       <i>wildcards</i>, and 1 "s" and 1 "h". Those five blocks lead us to what
       we call...
@@ -289,9 +284,7 @@ export default () =>
       containing "word" that may or may not have other things around it.
     </blockquote>
 
-    <p>
-      In Python, that regex might look like this:
-    </p>
+    <p>In Python, that regex might look like this:</p>
 
     <Highlight className="python">
       {`
@@ -366,9 +359,7 @@ print(who)                                 # "Eli"
       what goes in the middle, but what goes on the sides?
     </p>
 
-    <p>
-      Plot twist, nothing.
-    </p>
+    <p>Plot twist, nothing.</p>
 
     <p>
       <i>... goes on the left.</i> The right side, however, has some very, very
@@ -385,139 +376,74 @@ print(who)                                 # "Eli"
       <a href="https://regex101.com/">Regex101.com</a>):
     </p>
 
-    <table>
-      <tr>
-        <th>
-          Modifier
-        </th>
-        <th>
-          Nickname
-        </th>
-        <th>
-          Description
-        </th>
-      </tr>
-      <tr>
-        <td>
-          g
-        </td>
-        <td>
-          global
-        </td>
-        <td>
-          All matches (don't return on first match)
-        </td>
-      </tr>
-      <tr>
-        <td>
-          m
-        </td>
-        <td>
-          multi-line
-        </td>
-        <td>
-          Causes ^ and $ to match the begin/end of each line (not only begin/end
-          of string)
-        </td>
-      </tr>
-      <tr>
-        <td>
-          i
-        </td>
-        <td>
-          insensitive
-        </td>
-        <td>
-          Case insensitive match (ignores case of [a-zA-Z])
-        </td>
-      </tr>
-      <tr>
-        <td>
-          x
-        </td>
-        <td>
-          extended
-        </td>
-        <td>
-          Spaces and text after a # in the pattern are ignored
-        </td>
-      </tr>
-      <tr>
-        <td>
-          X
-        </td>
-        <td>
-          extra
-        </td>
-        <td>
-          A \ followed by a letter with no special meaning is faulted
-        </td>
-      </tr>
-      <tr>
-        <td>
-          s
-        </td>
-        <td>
-          single-line
-        </td>
-        <td>
-          Dot matches newline characters
-        </td>
-      </tr>
-      <tr>
-        <td>
-          u
-        </td>
-        <td>
-          unicode
-        </td>
-        <td>
-          Pattern strings are treated as UTF-16. Also causes escape sequences to
-          match unicode characters
-        </td>
-      </tr>
-      <tr>
-        <td>
-          U
-        </td>
-        <td>
-          ungreedy
-        </td>
-        <td>
-          The match becomes lazy by default. Now a `?` following a quantifier
-          makes it greedy
-        </td>
-      </tr>
-      <tr>
-        <td>
-          A
-        </td>
-        <td>
-          anchored
-        </td>
-        <td>
-          Pattern is forced to ^
-        </td>
-      </tr>
-      <tr>
-        <td>
-          J
-        </td>
-        <td>
-          duplicate
-        </td>
-        <td>
-          allow duplicate subpattern names
-        </td>
-      </tr>
-    </table>
+    <Table
+      columns={{ m: "Modifier", n: "Nickname", d: "Description" }}
+      rows={[
+        {
+          m: "g",
+          n: "global",
+          d: "All matches (don't return on first match)"
+        },
+        {
+          m: "m",
+          n: "multi-line",
+          d:
+            "Causes ^ and $ to match the begin/end of each line (not only begin/end of string)"
+        },
+        {
+          m: "i",
+          n: "insensitive",
+          d: "Case insensitive match (ignores case of [a-zA-Z])"
+        },
+        {
+          m: "x",
+          n: "extended",
+          d: "Spaces and text after a # in the pattern are ignored"
+        },
+        {
+          m: "X",
+          n: "extra",
+          d: "A \\ followed by a letter with no special meaning is faulted"
+        },
+        {
+          m: "s",
+          n: "single-line",
+          d: "Dot matches newline characters"
+        },
+        {
+          m: "u",
+          n: "unicode",
+          d:
+            "Pattern strings are treated as UTF-16. Also causes escape sequences to match unicode characters"
+        },
+        {
+          m: "U",
+          n: "ungreedy",
+          d:
+            "The match becomes lazy by default. Now a `?` following a quantifier makes it greedy"
+        },
+        {
+          m: "A",
+          n: "anchored",
+          d: "Pattern is forced to ^"
+        },
+        {
+          m: "J",
+          n: "duplicate",
+          d: "Allow duplicate subpattern names"
+        }
+      ]}
+    />
 
     <p>
       For instance, until now, all of our examples have been{" "}
       <i>case-sensitive</i>. That means, capitalizing or lower-casing any one
       character would make that string no longer match the pattern. We can make
-      our patterns <i>case-<b>insensitive</b></i> with the <code>`i`</code>{" "}
-      modifier.
+      our patterns{" "}
+      <i>
+        case-<b>insensitive</b>
+      </i>{" "}
+      with the <code>`i`</code> modifier.
     </p>
 
     <p>
@@ -551,10 +477,12 @@ print(who)                                 # "Eli"
     </p>
 
     <p>
-      You can get a full list of tokens and test your regexs extensively (<a href="https://regex101.com">here</a>.
-      I still use this website almost every time I write regexs, because the
-      testing tool is remarkably helpful and powerful. It even generates code
-      for you if you're not sure how to do it in your programming language yet.
+      You can get a full list of tokens and test your regexs extensively (<a href="https://regex101.com">
+        here
+      </a>. I still use this website almost every time I write regexs, because
+      the testing tool is remarkably helpful and powerful. It even generates
+      code for you if you're not sure how to do it in your programming language
+      yet.
     </p>
 
     <p>
@@ -562,4 +490,5 @@ print(who)                                 # "Eli"
       <a href="https://regexcrossword.com/">regex crossword puzzles</a>. They'll
       really get you thinking with regex!
     </p>
-  </Post>;
+  </Post>
+);

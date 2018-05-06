@@ -1,6 +1,7 @@
 import Highlight from "react-highlight";
 import Link from "next/link";
 import Post from "../../layouts/post";
+import Table from "../../components/table";
 
 export default () => (
   <Post
@@ -109,48 +110,35 @@ print(f'f-string:\t{f_string_times[0]}\t{f_string_times[1]}\t{f_string_times[2]}
 
     <p>And the output was as follows (time in seconds):</p>
 
-    <table>
-      <tbody>
-        <tr>
-          <th>Type</th>
-          <th>Trial 2</th>
-          <th>Trial 3</th>
-          <th>Trial 4</th>
-        </tr>
-        <tr>
-          <td>
-            <code>`%`</code>
-          </td>
-          <td>0.358393278391</td>
-          <td>0.359634358312</td>
-          <td>0.357803165661</td>
-        </tr>
-        <tr>
-          <td>
-            <code>`str.format()`</code>
-          </td>
-          <td>1.075245370745</td>
-          <td>1.076750640947</td>
-          <td>1.071864144756</td>
-        </tr>
-        <tr>
-          <td>
-            <code>`str.Template()`</code>
-          </td>
-          <td>4.411845730430</td>
-          <td>4.605993111158</td>
-          <td>4.499692948284</td>
-        </tr>
-        <tr>
-          <td>
-            <code>`f-string`</code>
-          </td>
-          <td>0.272246474610</td>
-          <td>0.278632974750</td>
-          <td>0.301266738268</td>
-        </tr>
-      </tbody>
-    </table>
+    <Table
+      columns={{ t: "Type", t1: "Trial 1", t2: "Trial 2", t3: "Trial 3" }}
+      rows={[
+        {
+          t: "`%`",
+          t1: "0.358393278391",
+          t2: "0.359634358312",
+          t3: "0.357803165661"
+        },
+        {
+          t: "`str.format()`",
+          t1: "1.075245370745",
+          t2: "1.076750640947",
+          t3: "1.071864144756"
+        },
+        {
+          t: "`str.Template()`",
+          t1: "4.411845730430",
+          t2: "4.605993111158",
+          t3: "4.499692948284"
+        },
+        {
+          t: "`f-string`",
+          t1: "0.272246474610",
+          t2: "0.278632974750",
+          t3: "0.301266738268"
+        }
+      ]}
+    />
 
     <blockquote>
       <i>

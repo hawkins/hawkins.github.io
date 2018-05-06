@@ -11,9 +11,15 @@ const Footer = () => (
     <style jsx>{`
       div {
         text-align: center;
-        padding: 30px 20%;
+        padding: 30px 20px;
         background-color: black;
         color: #ecf0f1;
+      }
+      @media (min-width: 700px) {
+        div {
+          padding: 30px 20%;
+          background-color: black;
+        }
       }
     `}</style>
   </div>

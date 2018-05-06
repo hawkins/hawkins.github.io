@@ -42,8 +42,14 @@ const Header = ({ title }) => (
         white-space: nowrap;
       }
       .header {
-        padding: 30px 20% 10px 20%;
+        padding: 30px 20px 10px 20px;
         background-color: black;
+      }
+      @media (min-width: 700px) {
+        .header {
+          padding: 30px 20% 10px 20%;
+          background-color: black;
+        }
       }
     `}</style>
   </div>

@@ -53,13 +53,15 @@ const Page = ({ title, children }) => (
         content={title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}
       />
       <title>{title ? "Josh Hawkins is " + title : "Josh Hawkins is..."}</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <style>{`
         body {
           padding: 0;
           margin: 0;
           height: 100%;
           background-color: black;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          font-size: 110%;
         }
         pre {
           margin: 10px;
@@ -85,6 +87,9 @@ const Page = ({ title, children }) => (
         }
 
         @media (min-width: 700px) {
+          body {
+            font-size: 100%;
+          }
           .content {
             padding: 20px 10%;
           }

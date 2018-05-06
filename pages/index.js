@@ -10,7 +10,7 @@ export default () => (
     <ul>
       <li>
         <Link prefetch href="/an-open-source-fanatic">
-          <a>an open source fanatic and developer</a>
+          <a>an open source fanatic</a>
         </Link>
       </li>
       <li>

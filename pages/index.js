@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Page from "../layouts/page";
-import Greeting from "../components/greeting";
+import Link from 'next/link';
+import Page from '../layouts/page';
+import Greeting from '../components/greeting';
 
 export default () => (
   <Page>
@@ -19,17 +19,22 @@ export default () => (
         </Link>
       </li>
       <li>
-        available for hire! Be sure to{" "}
+        <Link prefetch href="/a-gamer">
+          <a>a gamer</a>
+        </Link>
+      </li>
+      <li>
+        available for contracting or collaborating! Be sure to{' '}
         <Link prefetch href="mailto:hawkinswritescode@gmail.com">
           <a>get in contact</a>
-        </Link>{" "}
+        </Link>{' '}
         with him if you'd like to team up to build amazing things.
       </li>
     </ul>
 
     <style jsx>{`
       li:before {
-        content: "... ";
+        content: '... ';
       }
       li {
         list-style: none;

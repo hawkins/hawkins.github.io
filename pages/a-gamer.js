@@ -10,7 +10,7 @@ export default () => (
     </p>
     <p>
       If you'd like to play games with me sometime, feel free to add me on
-      Nintendo Switch: <code>SW-8449-3127-2310</code>
+      Nintendo Switch: <code>SW-8449-3175-2310</code>
     </p>
     <p>
       For PC games, you can find me on Steam:{' '}
